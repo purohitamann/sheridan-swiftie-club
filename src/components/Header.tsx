@@ -1,52 +1,69 @@
-import React, { useEffect, useRef } from 'react';
-import LinkComponent from './LinkComponent/LinkComponent';
+import React, { useEffect, useRef, useState } from 'react';
+import Confetti from 'react-confetti';
 
 const Header: React.FC = () => {
     const audioRef = useRef<HTMLAudioElement | null>(null);
+    const customColors = ['#000000', '#FFFFFF', '#808080', '#E4E2DD'];
+    const [isConfettiVisible, setConfettiVisible] = useState(false);
+    const [hasPlayedAudio, setHasPlayedAudio] = useState(false);
 
     const playAudio = () => {
-        if (audioRef.current) {
-            audioRef.current.volume = 0.5;
+        if (audioRef.current && !hasPlayedAudio) {
+            audioRef.current.volume = 0.8;
             audioRef.current.play();
+            setConfettiVisible(true);
+            // setHasPlayedAudio(true); // Mark audio as played
+
         }
     };
 
     useEffect(() => {
-        if (typeof window !== 'undefined') {
+        if (typeof window !== 'undefined' && !hasPlayedAudio) {
             audioRef.current = new Audio('/so-high-school-intro.mp3');
             playAudio();
+
         }
-    }, []);
+
+    }, [hasPlayedAudio]);
 
     return (
-        <div className="flex flex-col justify-center items-center text-center w-[100vw] min-h-screen pt-10 ">
-            <div>
-                <h1
-                    style={{ fontFamily: "Cinzel", color: "#E4E2DD" }}
-                    className="text-6xl font-light md:text-xl pb-2"
-                    onMouseEnter={playAudio}
-                    onClick={playAudio}
-                >
-                    Sheridan Swiftie Club
-                </h1>
-            </div>
-            <div
-                style={{ fontFamily: "Cinzel", backgroundColor: "rgba(0, 0, 0, 0.5)" }}
-                className="flex flex-col justify-center items-center text-[#E4E2DD] text-lg gap-2 uppercase h-[40vh] mt-8  p-10 text-wrap w-[90vw] md:w-[40vw] lg:w-[30vw] rounded-md"
+        <div className="flex flex-col justify-center items-center h-[100vh] text-center p-20 ">
+            <p style={{ fontFamily: "Cinzel" }} className="text-sm font-light text-[#e4e2ddc6] p-3">Est Oct&#39;23</p>
+            <h1
+                style={{ fontFamily: "Cinzel", color: "#E4E2DD" }}
+                className="text-6xl sm:text-xl md:text-xl font-light"
+                onMouseEnter={playAudio}
+                onClick={playAudio}
+                onMouseLeave={playAudio}
+                onTouchMove={playAudio}
+
             >
-                <p>The official website for Sheridan Swiftie Club</p>
-                <p>We’re your go-to at Sheridan for all things Taylor Swift! If you’d like to learn more about the club, head to Clubs Corner and search for us!</p>
-            </div>
-            <div className="flex-col text-center w-[100vw] pt-10">
-                <LinkComponent />
-            </div>
-            <footer className="mt-auto">
-                <div style={{ fontFamily: "Cinzel" }} className="flex flex-col justify-center items-center w-[90vw] p-8 text-center text-[#E4E2DD]">
-                    <p className="text-sm p-2">Disclaimer: We&#39;re not affiliated with Taylor Nation</p>
-                    <p className="text-sm p-1">Designed and developed by Sheridan Swiftie Club</p>
-                    <p className="text-sm p-1">© 2024 Sheridan Swiftie Club</p>
-                </div>
-            </footer>
+                Sheridan Swiftie Club
+            </h1>
+            <p style={{ fontFamily: "Cinzel" }} className="text-sm font-light text-[#e4e2ddc6] p-3">Sheridan College, Trafalgar</p>
+            {isConfettiVisible && (
+                <Confetti
+                    width={window.innerWidth}
+                    height={window.innerHeight}
+                    numberOfPieces={200}
+                    recycle={true}
+                    colors={customColors}
+                    gravity={0.01}
+                    wind={0.004}
+                    opacity={0.8}
+                    drawShape={(ctx) => {
+                        ctx.beginPath();
+                        for (let i = 0; i < 22; i++) {
+                            const angle = 0.35 * i;
+                            const x = (0.2 + 1.5 * angle) * Math.cos(angle);
+                            const y = (0.2 + 1.5 * angle) * Math.sin(angle);
+                            ctx.lineTo(x, y);
+                        }
+                        ctx.stroke();
+                        ctx.closePath();
+                    }}
+                />
+            )}
         </div>
     );
 };

@@ -4,7 +4,8 @@ import PlayButton from '../components/PlayButton'; // Adjust the path according 
 import Header from '../components/Header'; // Import the new ClubName component
 import Link from 'next/link';
 import LinkComponent from '../components/LinkComponent/LinkComponent';
-
+import Body from '@/components/Body';
+import ThemeWrapper from '@/components/ThemeWrapper/ThemeWrapper';
 const Home: React.FC = () => {
   useEffect(() => {
 
@@ -14,9 +15,10 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Header />
+    <main className="flex flex-col min-h-screen">
+      <ThemeWrapper>    <Header /></ThemeWrapper>
 
+      <Body />
     </main>
   );
 };

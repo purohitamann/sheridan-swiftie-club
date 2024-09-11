@@ -7,6 +7,8 @@ html,
   padding: 0;
   height: 100%;
   width: 100%;
+  font-family: "Cinzel", serif;
+  background-color: #1a1a1a;
 }
 
 .theme-wrapper {
