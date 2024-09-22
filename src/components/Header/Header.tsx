@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Confetti from 'react-confetti';
-
+import './Header.css';
 const Header: React.FC = () => {
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const customColors = ['#000000', '#FFFFFF', '#808080', '#E4E2DD'];
@@ -27,7 +27,7 @@ const Header: React.FC = () => {
     }, [hasPlayedAudio]);
 
     return (
-        <div className="flex flex-col justify-center items-center h-[100vh] text-center p-20 ">
+        <header className=" flex flex-col justify-center items-center h-[100vh] text-center p-20 ">
             <p style={{ fontFamily: "Cinzel" }} className="text-sm font-light text-[#e4e2ddc6] p-3">Est Oct&#39;23</p>
             <h1
                 style={{ fontFamily: "Cinzel", color: "#E4E2DD" }}
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
                     numberOfPieces={200}
                     recycle={true}
                     colors={customColors}
-                    gravity={0.01}
+                    gravity={0.009}
                     wind={0.004}
                     opacity={0.8}
                     drawShape={(ctx) => {
@@ -64,7 +64,8 @@ const Header: React.FC = () => {
                     }}
                 />
             )}
-        </div>
+
+        </header>
     );
 };
 

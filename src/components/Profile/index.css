@@ -1,0 +1,9 @@
+.profile {
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in;
+}
+
+.profile:hover {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}

@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+
+.winter {
+  background-image: url("/candid-winter.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  width: 100vw;
+  opacity: 0.5;
+  background-blend-mode: difference;
+  background-size: cover;
+  background-repeat: repeat-x;
+  background-blend-mode: color-dodge;
+  transition: opacity 0.5s ease-in;
+}
+
+.winter:hover {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+@media screen and (max-width: 668px) {
+  .winter {
+    height: 90vh;
+    width: 100vw;
+    background-size: 100vw 100vh;
+    background-blend-mode: soft-light;
+    padding: 0;
+    margin: 0;
+  }
+  section {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 70vh;
+  }
+}

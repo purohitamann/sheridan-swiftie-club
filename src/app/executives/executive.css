@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+
+.winter {
+  background-image: url("/winter.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  width: 100vw;
+  background-size: cover; /* Ensures both the gradient and texture fill the screen */
+  background-blend-mode: soft-light; /* Blends the texture with the gradient */
+  background-repeat: repeat-x;
+  background-blend-mode: color-dodge;
+}
+
+@media screen and (max-width: 668px) {
+  .winter {
+    width: 100vw;
+    height: 30vh;
+    background-size: 100vw 25vh;
+    background-blend-mode: soft-light;
+    padding: 0;
+    margin: 0;
+  }
+  section {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}

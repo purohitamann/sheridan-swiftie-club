@@ -1,0 +1,9 @@
+header {
+  opacity: 0.5;
+  transition: opacity 0.5s ease-in;
+}
+
+header:hover {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}

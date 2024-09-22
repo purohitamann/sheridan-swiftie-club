@@ -5,6 +5,7 @@ import ThemeWrapper from "../components/ThemeWrapper/ThemeWrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
+
 export const metadata: Metadata = {
   title: "Sheridan Swiftie Club",
   description: "The official website for Sheridan Swiftie Club",
