@@ -1,15 +1,16 @@
+'use client';
 import React from 'react';
 import Banner from '../../components/Banner';
 import Profile from '../../components/Profile';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
 
+import TypewriterEffect from '@/components/TypeWriterEffect/TypeWriterEffect';
+
 function Exec() {
     return (
         <section className="flex flex-col justify-center items-center p-6 sm:p-10 w-full min-h-[100vh]">
-            <style>
-                @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
-            </style>
+
             {/* Navigation Links */}
             <section className="flex justify-center items-center space-x-6 text-[#E4E2DD] py-6">
                 <Link href="/" className="hover:text-white hover:font-bold text-base">Home</Link>
@@ -26,8 +27,12 @@ function Exec() {
                 </Banner>
             </div>
 
+            <div>
+                <TypewriterEffect />
+            </div>
+
             {/* Profiles Section */}
-            <section className="flex flex-col justify-center items-center space-y-10 sm:space-y-16 w-full px-4 sm:px-10">
+            <section className="flex flex-col justify-center items-center align-center  space-y-10 sm:space-y-16 w-2/3  sm:px-10">
                 <Profile
                     fullName="Aman Hiran Purohit"
                     profilePic="/executives/AP.png"

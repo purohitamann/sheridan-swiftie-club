@@ -24,7 +24,7 @@ const Header: React.FC = () => {
 
         }
 
-    }, [hasPlayedAudio]);
+    }, [hasPlayedAudio, playAudio]);
 
     return (
         <header className=" flex flex-col justify-center items-center h-[100vh] text-center p-20 ">

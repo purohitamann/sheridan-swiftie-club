@@ -1,5 +1,6 @@
 import React from 'react'
 import "./index.css";
+import Image from 'next/image'
 interface Props {
     fullName: string;
     profilePic: string;
@@ -13,7 +14,7 @@ export default function index(props: Props) {
             <div className=" flex md:flex-row flex-col justify-center items-center align-center  md:pt-10 md:pr-30 md:pl-30 text-[#E4E2DD] w-3/3 h-full rounded ">
 
                 <div className="rounded flex justify-center ">
-                    <img className="profile radius-3xl w-4/5" src={props.profilePic} />
+                    <Image className="profile radius-3xl w-4/5" src={props.profilePic} alt='profile-image' width={600} height={300}></Image>
                 </div>
 
                 <div className='rounded w-full h-50 text-wrap text-justify flex-col '>
