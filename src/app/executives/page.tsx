@@ -33,7 +33,7 @@ function Exec() {
                     profilePic="/executives/AP.png"
                     role="President"
                     pronouns="He/Him"
-                    description="I'm Aman, the architect behind the Sheridan Swiftie Club and proud to serve as its President. As we celebrate the club's 1st anniversary, I'm thrilled about the exciting events and meetups we have planned this fall. It's been an amazing journey, and I can't wait to see how we continue to grow this vibrant community!"
+                    description="I&apos;m Aman, the architect behind the Sheridan Swiftie Club and proud to serve as its President. As we celebrate the club&apos;s 1st anniversary, I&apos;m thrilled about the exciting events and meetups we have planned this fall. It&apos;s been an amazing journey, and I can&apos;t wait to see how we continue to grow this vibrant community!"
                 />
 
                 <Profile
@@ -41,7 +41,7 @@ function Exec() {
                     profilePic="/executives/VK.png"
                     role="Vice President - Events"
                     pronouns="She/Her"
-                    description="Hi, I'm Vidhi, your VP of Events! Organizing events and boosting engagement is my passion. As we head into this new semester, I’m excited to host memorable events and foster even more participation within our community. Let's make this year full of amazing Swiftie moments!"
+                    description="Hi, I&apos;m Vidhi, your VP of Events! Organizing events and boosting engagement is my passion. As we head into this new semester, I&apos;m excited to host memorable events and foster even more participation within our community. Let&apos;s make this year full of amazing Swiftie moments!"
                 />
 
                 <Profile
@@ -49,7 +49,7 @@ function Exec() {
                     profilePic="/executives/CC.png"
                     role="Vice President - Engagement"
                     pronouns="She/They"
-                    description="Hey there! I'm Cris, your VP of Engagement, and I'm super excited to connect with fellow Swifties this year. I love discussing music with no judgment, especially Taylor Swift's! I can’t wait to meet new faces and create awesome memories with everyone. Let’s make this year unforgettable!"
+                    description="Hey there! I&apos;m Cris, your VP of Engagement, and I&apos;m super excited to connect with fellow Swifties this year. I love discussing music with no judgment, especially Taylor Swift&apos;s! I can&apos;t wait to meet new faces and create awesome memories with everyone. Let&apos;s make this year unforgettable!"
                 />
 
                 <Profile
@@ -57,7 +57,7 @@ function Exec() {
                     role="Outreach & Engagement Coordinator"
                     profilePic="/executives/AD.png"
                     pronouns="She/Her"
-                    description="Hi, I'm Abira, a third-year Computer Science student and the Outreach & Engagement Coordinator at SSC. Music has always been a major influence in my life, and Taylor Swift's work is no exception. I’m excited to help organize events and contribute to growing this amazing Swiftie community!"
+                    description="Hi, I&apos;m Abira, a third-year Computer Science student and the Outreach & Engagement Coordinator at SSC. Music has always been a major influence in my life, and Taylor Swift&apos;s work is no exception. I&apos;m excited to help organize events and contribute to growing this amazing Swiftie community!"
                 />
 
                 <Profile
@@ -65,7 +65,7 @@ function Exec() {
                     profilePic="/executives/SL.png"
                     role="Events Lead"
                     pronouns="He/Him"
-                    description="Hello, I'm Siddharth, the Events Lead at SSC. I'm looking forward to getting to know all the new members and collaborating with everyone to create some unforgettable events this year. Let's make this fall semester a great one for all Swifties!"
+                    description="Hello, I&apos;m Siddharth, the Events Lead at SSC. I&apos;m looking forward to getting to know all the new members and collaborating with everyone to create some unforgettable events this year. Let&apos;s make this fall semester a great one for all Swifties!"
                 />
 
                 <Profile
@@ -73,7 +73,7 @@ function Exec() {
                     profilePic="/executives/PM.png"
                     role="Operations Manager"
                     pronouns="He/Him"
-                    description="Hey, Swifties! I'm Prabal, your Operations Manager. This fall, I’m excited about our upcoming events and the chance to welcome new members. We’ve got some fun activities planned to explore Taylor’s music and her journey as an artist. Can’t wait to see you all at the events!"
+                    description="Hey, Swifties! I&apos;m Prabal, your Operations Manager. This fall, I&apos;m excited about our upcoming events and the chance to welcome new members. We&apos;ve got some fun activities planned to explore Taylor&apos;s music and her journey as an artist. Can&apos;t wait to see you all at the events!"
                 />
 
                 <Profile
@@ -81,7 +81,7 @@ function Exec() {
                     profilePic="/executives/AS.png"
                     role="Social Media Manager"
                     pronouns="He/Him"
-                    description="Hi, I'm Aditya, your Social Media Manager. Designing graphics and animations is my passion, and I’m excited to create engaging content for the club. Let’s make sure SSC’s presence shines online and keeps everyone connected and excited for what’s next!"
+                    description="Hi, I&apos;m Aditya, your Social Media Manager. Designing graphics and animations is my passion, and I&apos;m excited to create engaging content for the club. Let&apos;s make sure SSC&apos;s presence shines online and keeps everyone connected and excited for what&apos;s next!"
                 />
 
                 <Profile
@@ -89,11 +89,9 @@ function Exec() {
                     profilePic="/executives/TA.png"
                     role="Advisor"
                     pronouns="She/Her"
-                    description="Hey, I'm Tanya, and I'm thrilled to be the club's Advisor this year. I'm embracing my own personal growth journey, much like Taylor in her *1989* era. I look forward to advising the club and ensuring we continue to have impactful events and a strong presence on campus."
+                    description="Hey, I&apos;m Tanya, and I&apos;m thrilled to be the club&apos;s Advisor this year. I&apos;m embracing my own personal growth journey, much like Taylor in her *1989* era. I look forward to advising the club and ensuring we continue to have impactful events and a strong presence on campus."
                 />
             </section>
-
-
         </section>
     )
 }
