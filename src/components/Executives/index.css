@@ -26,8 +26,8 @@
     width: 100vw;
     background-size: 100vw 100vh;
     background-blend-mode: soft-light;
-    padding: 0;
-    margin: 0;
+    padding: 100;
+    margin: 10;
   }
   section {
     padding: 0;

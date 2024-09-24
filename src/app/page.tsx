@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     <main className="flex flex-col min-h-screen">
 
       <ThemeWrapper>    <Header /></ThemeWrapper>
-      {/* make profile */}
+
       <Body />
 
     </main>

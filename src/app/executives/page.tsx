@@ -5,32 +5,99 @@ import "./executive.css";
 import "../globals.css";
 import Banner from '../../components/Banner'
 import Profile from '../../components/Profile'
+import Footer from '../../components/Footer'
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 function exec() {
     return (
-        <section className='flex-col' >
+        <section className='flex-col justify-center items-center align-center ' >
 
             <div className="winter">
 
             </div>
-            <div className="flex pt-5">
+            <section className='flex justify-evenly items-center align-center text-[#E4E2DD] pt-10'>
+                <Link href="/" className='hover:text-white hover:font-bold hover:text-lg'>Home</Link>
+                <Link href="https://forms.gle/Fc63swf8ZpRHEG9r9" className='hover:text-white hover:font-bold hover:text-lg'>Join The Team</Link>
+                <Link href="https://sheridancollege.campuslabs.ca/engage/organization/sheridanswiftieclub/events" className='hover:text-white hover:font-bold hover:text-lg'>Events</Link>
+            </section>
+
+
+            <div className="flex pt-5 ">
                 <Banner title='SSC Executives 2024-25' subtitle='Meet your Executive Team' >
                     <div className="flex flex-col justify-center items-center align-center  text-[#E4E2DD] w-full h-full rounded">
-                        <h1>Coming Soon!</h1>
+                        <h1 className="italic">Executive Roster</h1>
                     </div>
                 </Banner>
             </div>
 
 
 
-            <section className='flex-col p-0 m:0 sm:flex sm:mr-10 sm:ml-10 sm:p-40'>
-                <Profile fullName='Aman Hiran Purohit' profilePic='/executives/AP.png' role='President' pronouns='He/Him' description='I am the architect who drew up the plan for the club. I am also the President of the club. My pride and joy the Sheridan Swiftie Club is turning 1, we are working very hard in building this amazing community. Looking foarward to all the events and meetups we have planned this fall semester! ' />
-                <Profile fullName='Vidhi Kalal' profilePic='/executives/VK.png' role='Vice President - Events' pronouns='She/Her' description='Hosting more events and getting surplus engagement. TTPD : I can do it with a broken heart . I think it resonates a lot with that.  ' />
-                <Profile fullName='Cris Cabrera' profilePic='/executives/CC.png' role='Vice President - Engagement' pronouns='She/They' description='Howdy! My name is Cris and I’m enchanted to be the new VP of the Sheridan Swiftie Club this year! The good news about that is that I have a place where I can talk about music that I enjoy with other people without being judged! The bad news is that I will never beat the allegations that I listen to Taylor Swift music way too much. But hey, haters gonna hate! I hope to see a lot of familiar and new faces this year at events and in the club! I’m super excited to plan and host events!' />
-                <Profile fullName='Siddharth Lamba' profilePic='/executives/SL.png' role='Events Lead' pronouns='He/Him' description='Events Lead at SSC. Looking forward to knowing new members and meeting new peeps!' />
-                <Profile fullName='Prabal Manchanda' profilePic='/executives/PM.png' role='Operations Manager' pronouns='He/Him' description="Hello, Swifties! I'm Prabal Manchanda, your Operations Manager here at the Sheridan Swiftie Club. This fall, I'm especially excited about our upcoming events and the chance to welcome new members into our community. We've got some fun activities planned that will dive deep into Taylor's discography and her evolution as an artist. I'm looking forward to seeing how her music continues to inspire and resonate with us all in new and meaningful ways." />
-                <Profile fullName='Aditya Sharma' profilePic='/executives/AD.png' role='Social Media Manager' pronouns='He/Him' description='Your Mind is everything you become what you believe in. Creating lots of graphics designs and poster and unleashing my potential, i love design and animation its a hobby for me.' />
-                <Profile fullName='Tanya Arora' profilePic='/executives/TA.png' role='Advisor' pronouns='She/Her' description="Argumentative antithetical dream girl. I'm in my Taylor Swift's 1989 era because I'm embracing a season of reinvention and self-discovery, much like how Taylor redefined her sound with this album. It's a time of feeling empowered, letting go of the past, and confidently stepping into new opportunities. *1989* represents a mix of nostalgia and forward momentum for me—I'm celebrating personal growth while enjoying life's vibrant moments, just like the upbeat and adventurous vibes of the album. More events and publicizing the club more. " />
+            <section className='flex-col justify-center items-center align-center sm:flex sm:mr-10 sm:ml-10 sm:p-40'>
+                <Profile
+                    fullName='Aman Hiran Purohit'
+                    profilePic='/executives/AP.png'
+                    role='President'
+                    pronouns='He/Him'
+                    description="I'm Aman, the architect behind the Sheridan Swiftie Club and proud to serve as its President. As we celebrate the club's 1st anniversary, I'm thrilled about the exciting events and meetups we have planned this fall. It's been an amazing journey, and I can't wait to see how we continue to grow this vibrant community!"
+                />
+
+                <Profile
+                    fullName='Vidhi Kalal'
+                    profilePic='/executives/VK.png'
+                    role='Vice President - Events'
+                    pronouns='She/Her'
+                    description="Hi, I'm Vidhi, your VP of Events! Organizing events and boosting engagement is my passion. As we head into this new semester, I’m excited to host memorable events and foster even more participation within our community. Let's make this year full of amazing Swiftie moments!"
+                />
+
+                <Profile
+                    fullName='Cris Cabrera'
+                    profilePic='/executives/CC.png'
+                    role='Vice President - Engagement'
+                    pronouns='She/They'
+                    description="Hey there! I'm Cris, your VP of Engagement, and I'm super excited to connect with fellow Swifties this year. I love discussing music with no judgment, especially Taylor Swift's! I can’t wait to meet new faces and create awesome memories with everyone. Let’s make this year unforgettable!"
+                />
+
+                <Profile
+                    fullName='Abira Ester Demello'
+                    role='Outreach & Engagement Coordinator'
+                    profilePic='/executives/AD.png'
+                    pronouns='She/Her'
+                    description="Hi, I'm Abira, a third-year Computer Science student and the Outreach & Engagement Coordinator at SSC. Music has always been a major influence in my life, and Taylor Swift's work is no exception. I’m excited to help organize events and contribute to growing this amazing Swiftie community!"
+                />
+
+                <Profile
+                    fullName='Siddharth Lamba'
+                    profilePic='/executives/SL.png'
+                    role='Events Lead'
+                    pronouns='He/Him'
+                    description="Hello, I'm Siddharth, the Events Lead at SSC. I'm looking forward to getting to know all the new members and collaborating with everyone to create some unforgettable events this year. Let's make this fall semester a great one for all Swifties!"
+                />
+
+                <Profile
+                    fullName='Prabal Manchanda'
+                    profilePic='/executives/PM.png'
+                    role='Operations Manager'
+                    pronouns='He/Him'
+                    description="Hey, Swifties! I'm Prabal, your Operations Manager. This fall, I’m excited about our upcoming events and the chance to welcome new members. We’ve got some fun activities planned to explore Taylor’s music and her journey as an artist. Can’t wait to see you all at the events!"
+                />
+
+                <Profile
+                    fullName='Aditya Sharma'
+                    profilePic='/executives/AS.png'
+                    role='Social Media Manager'
+                    pronouns='He/Him'
+                    description="Hi, I'm Aditya, your Social Media Manager. Designing graphics and animations is my passion, and I’m excited to create engaging content for the club. Let’s make sure SSC’s presence shines online and keeps everyone connected and excited for what’s next!"
+                />
+
+                <Profile
+                    fullName='Tanya Arora'
+                    profilePic='/executives/TA.png'
+                    role='Advisor'
+                    pronouns='She/Her'
+                    description="Hey, I'm Tanya, and I'm thrilled to be the club's Advisor this year. I'm embracing my own personal growth journey, much like Taylor in her *1989* era. I look forward to advising the club and ensuring we continue to have impactful events and a strong presence on campus."
+                />
             </section>
+
         </section>
     )
 }
