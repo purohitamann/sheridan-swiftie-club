@@ -10,10 +10,10 @@ function exec() {
         <section >
 
 
-            <div className="winter">
+            <div className="winter flex flex-col justify-center items-center align-center p-10">
                 <Banner title='SSC Executives 2024-25' subtitle='Meet your Executive Team' >
-                    <div className="flex flex-col justify-center items-center align-center p-10 text-[#E4E2DD] w-3/3 h-full rounded">
-                        <Link href="/executives"> <h1>Coming Soon!</h1></Link>
+                    <div className="flex flex-col justify-center items-center align-center p-10  text-[#E4E2DD] w-3/3 h-full rounded">
+                        <Link href="/executives" className='hover:text-white hover:font-bold'> <h1>Meet Our Executives!</h1></Link>
                     </div>
                 </Banner>
             </div>

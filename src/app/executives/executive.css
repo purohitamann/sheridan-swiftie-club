@@ -11,6 +11,8 @@
   background-blend-mode: soft-light; /* Blends the texture with the gradient */
   background-repeat: repeat-x;
   background-blend-mode: color-dodge;
+  opacity: 0.6;
+  transition: opacity 0.5s ease-in;
 }
 
 @media screen and (max-width: 668px) {

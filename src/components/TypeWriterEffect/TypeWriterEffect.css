@@ -1,0 +1,54 @@
+/* Typewriter container styling */
+.typewriter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  /* background-color: #111; Dark background for contrast */
+}
+
+/* Typewriter text styling */
+.typewriter-text {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.5rem;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink-caret 1s step-end infinite, fadeIn 2s ease-in-out;
+}
+
+/* Animation for the blinking caret */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: glowing effect on the text */
+.typewriter-text:hover {
+  text-shadow: 0 0 5px #a7a6a5, 0 0 10px #969696, 0 0 20px #5a5957,
+    0 0 40px #3d3d3c;
+}
+
+@media screen and (max-width: 668px) {
+  .typewriter-text {
+    font-size: 1rem;
+  }
+}
