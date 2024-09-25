@@ -5,6 +5,7 @@ import Profile from '../../components/Profile';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
 import TypewriterEffect from '@/components/TypeWriterEffect/TypeWriterEffect';
+import Navbar from '@/components/Navbar';
 
 function Exec() {
     const [mounted, setMounted] = useState(false);
@@ -18,13 +19,9 @@ function Exec() {
     }
 
     return (
-        <> {mounted && (<div className="flex flex-col justify-center items-center  p-6 sm:p-10 min-w-full min-h-[100vh]">
+        <> {mounted && (<div className="flex flex-col justify-center items-center  p-6 sm:p-10 min-w-full min-h-[100vh] " style={{ fontFamily: 'Cinzel' }}>
             {/* Navigation Links */}
-            <div className="flex justify-center items-center space-x-6 text-[#E4E2DD] py-6">
-                <Link href="/" prefetch={false} className="hover:text-white hover:font-bold text-base">Home</Link>
-                <Link href="https://forms.gle/Fc63swf8ZpRHEG9r9" prefetch={false} className="hover:text-white hover:font-bold text-base">Join The Team</Link>
-                <Link href="https://sheridancollege.campuslabs.ca/engage/organization/sheridanswiftieclub/events" prefetch={false} className="hover:text-white hover:font-bold text-base">Events</Link>
-            </div>
+            <Navbar />
 
             {/* Banner Section */}
             <div className="w-full px-4 sm:px-10">
