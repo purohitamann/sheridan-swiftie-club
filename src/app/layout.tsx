@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
+    <html lang="en" style={{ fontFamily: 'Cinzel' }}>
 
 
       <body className={inter.className} style={{ fontFamily: 'Cinzel' }} >

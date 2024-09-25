@@ -12,6 +12,7 @@ const Body: React.FC = () => {
             {/* Navigation Links */}
             <section className='flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 text-[#E4E2DD] mb-6'>
                 <Link href="/" className='hover:text-white hover:font-bold text-sm sm:text-base'>Home</Link>
+                <Link href="/evermorefund" className='hover:text-white hover:font-bold text-sm sm:text-base'>Donate</Link>
                 <Link href="https://forms.gle/Fc63swf8ZpRHEG9r9" className='hover:text-white hover:font-bold text-sm sm:text-base'>Join The Team</Link>
                 <Link href="https://sheridancollege.campuslabs.ca/engage/organization/sheridanswiftieclub/events" className='hover:text-white hover:font-bold text-sm sm:text-base'>Events</Link>
             </section>
@@ -60,7 +61,7 @@ const Body: React.FC = () => {
             </section>
 
             {/* Links and Typewriter Section */}
-            <div className="flex flex-col items-center justify-center w-full h-[20vh] space-y-10 sm:mt-10">
+            <div className="flex flex-col items-center justify-center w-full h-[20vh] mb-10 space-y-10 sm:mt-10">
                 <LinkComponent />
                 <TypewriterEffect />
 
