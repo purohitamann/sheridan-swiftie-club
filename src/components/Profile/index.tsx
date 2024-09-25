@@ -10,7 +10,7 @@ interface Props {
 }
 export default function index(props: Props) {
     return (
-        <div>
+        <div className='flex flex-col justify-center items-center align-center pr-0 pl-0 sm:pr-40 sm:pl-40'>
             <div className=" flex md:flex-row flex-col justify-center items-center align-center  md:pt-10 md:pr-30 md:pl-30 text-[#E4E2DD] w-3/3 h-full rounded ">
 
                 <div className="rounded flex justify-center ">

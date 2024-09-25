@@ -7,6 +7,7 @@ import LinkComponent from '../components/LinkComponent/LinkComponent';
 import Body from '@/components/Body';
 import ThemeWrapper from '@/components/ThemeWrapper/ThemeWrapper';
 import Article from '@/components/Article';
+import Footer from '@/components/Footer';
 const Home: React.FC = () => {
   useEffect(() => {
 
@@ -21,6 +22,7 @@ const Home: React.FC = () => {
       <ThemeWrapper>    <Header /></ThemeWrapper>
 
       <Body />
+
 
     </main>
   );

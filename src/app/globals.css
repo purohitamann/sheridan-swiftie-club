@@ -94,10 +94,6 @@ html {
   transition: 0.5s ease-in;
 }
 
-main {
-  max-width: 100vw; /* Ensure the main content doesn’t exceed the viewport width */
-  overflow-x: hidden; /* Prevent any overflow within the main content */
-}
 @layer base {
   * {
     @apply border-border;
@@ -106,3 +102,7 @@ main {
     @apply bg-background text-foreground;
   }
 }
+/* main {
+  max-width: 100vw; 
+  overflow-x: hidden; 
+} */

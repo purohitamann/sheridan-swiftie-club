@@ -8,7 +8,7 @@ import TypewriterEffect from './TypeWriterEffect/TypeWriterEffect';
 
 const Body: React.FC = () => {
     return (
-        <section className="flex flex-col justify-start items-center p-4 sm:p-10 w-full min-h-[100vh]">
+        <section className="flex flex-col justify-start items-center p-4 sm:p-10 w-[100vw] min-h-[100vh]">
             {/* Navigation Links */}
             <section className='flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 text-[#E4E2DD] mb-6'>
                 <Link href="/" className='hover:text-white hover:font-bold text-sm sm:text-base'>Home</Link>
@@ -63,7 +63,13 @@ const Body: React.FC = () => {
             <div className="flex flex-col items-center justify-center w-full h-[20vh] space-y-10 sm:mt-10">
                 <LinkComponent />
                 <TypewriterEffect />
+
             </div>
+            <div className='flex justify-center '>
+                <Footer />
+            </div>
+
+
         </section>
     );
 };
