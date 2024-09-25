@@ -23,9 +23,13 @@ export default function RootLayout({
     <html lang="en">
 
 
-      <body className={inter.className} style={{ fontFamily: 'Cinzel' }} >   {children}
+      <body className={inter.className} style={{ fontFamily: 'Cinzel' }} >
+        <div>
+          {children}</div>
 
-        <Footer /> </body>
+
+      </body>
+
 
     </html>
   );

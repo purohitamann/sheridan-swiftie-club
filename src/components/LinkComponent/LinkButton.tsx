@@ -10,7 +10,7 @@ export default function LinkComponent(Props: Props) {
         <div className=' hover:bg-destructive-foreground hover:text-accent-foreground'>
 
 
-            <Link href={Props.LinkUrl}>{Props.LinkLabel}</Link>
+            <Link prefetch={false} href={Props.LinkUrl}>{Props.LinkLabel}</Link>
 
         </div>
     )
