@@ -83,7 +83,15 @@ function Exec() {
                     pronouns="He/Him"
                     description="Hello, I&apos;m Siddharth, the Events Lead at SSC. I&apos;m looking forward to getting to know all the new members and collaborating with everyone to create some unforgettable events this year. Let&apos;s make this fall semester a great one for all Swifties!"
                 />
-
+                {/* Benafsha  */}
+                <Profile
+                    fullName="Benafsha Kavarana "
+                    profilePic="/executives/BK.png"
+                    role="Outreach & Engagement Coordinator"
+                    pronouns="She/Her"
+                    description="Hi, I&apos;m Benafsha! Currently enrolled in the Public Relations program working towards becoming a PR pro who loves connecting with people and creating positive vibes. When I&apos;m not studying, you&apos;ll probably find me with a book, checking out new restaurants, or planning my next trip. Oh, and I&apos;m a huge Taylor Swift fan— I start my day with songs from the Reputation album and end the day with Midnights! I feel like I&apos;m definitely between the Reputation and Midnights eras. Reputation speaks to me because it&apos;s all about reclaiming your power and owning who you are. On the other hand, Midnights feels dreamy, representing those late-night thoughts and reflections about growth, love, and uncertainty.
+Both eras together just feel like the perfect mix of strength and self-discovery right now! I&apos;m looking forward to meeting fellow Swifties and bonding over our favourite Taylor Swift songs this fall term! I&apos;m excited for the themed events or album listening parties we might have and just sharing all Eras love. Plus, it&apos;ll be great to make new connections with people who share the same passion! What about you?"
+                />
                 {/* Prabal Manchanda */}
                 <Profile
                     fullName="Prabal Manchanda"
@@ -110,6 +118,7 @@ function Exec() {
                     pronouns="She/Her"
                     description="Hey, I&apos;m Tanya, and I&apos;m thrilled to be the club&apos;s Advisor this year. I&apos;m embracing my own personal growth journey, much like Taylor in her *1989* era. I look forward to advising the club and ensuring we continue to have impactful events and a strong presence on campus."
                 />
+
             </div>
 
             {/* Footer */}
