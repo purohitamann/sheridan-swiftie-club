@@ -25,7 +25,7 @@ export default function index(props: Props) {
 
                     <p className="font-medium">{props.role}</p>
 
-                    <div className="font-thin lowercase text-sm">
+                    <div className="font-thin  text-sm">
                         <p>{props.description}</p>
 
                     </div>
