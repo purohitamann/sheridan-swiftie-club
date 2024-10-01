@@ -28,6 +28,7 @@ interface BuyTokens {
     link: string;
     text: string;
     note: string;
+    disclaimer: string;
 }
 
 interface Video {
@@ -39,6 +40,8 @@ interface Video {
 interface OctoberGiving {
     heading: string;
     video: Video;
+    video_src: string;
+    title: string;
 }
 
 interface FeedOntario {
@@ -67,10 +70,7 @@ export default function EvermoreFund() {
             <div className='flex flex-col justify-center align-center items-center text-[#E4E2DD]  '>
                 <Navbar />
                 <div className='text-xl sm:text-2xl font-bold mb-6'>
-                    <a href="/evermorefund" className='hover:text-white hover:font-bold text-white font-bold py-2 px-4 rounded
-   bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-600 hover:to-orange-800 
-   shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out
-   relative font-sans' >  {data.title}</a>
+                    <a href="/evermorefund" >  {data.title}</a>
 
                 </div>
                 <div className='flex flex-col justify-center items-center align-center  md:pt-10 md:pr-30 md:pl-30 pr-0 pl-0 sm:pr-20 sm:pl-20'>
@@ -92,14 +92,37 @@ export default function EvermoreFund() {
                 </div>
                 <div className='flex flex-col justify-center items-center align-center  md:pt-10 md:pr-30 md:pl-30 pr-0 pl-0 sm:pr-40 sm:pl-40'>
                     <Link href={data.buy_tokens.link} prefetch={false} className="hover:text-white hover:font-bold text-base">
-                        <strong>{data.buy_tokens.text}</strong>
+                        <strong className='hover:text-white hover:font-bold text-white font-bold py-2 px-4 rounded
+   bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-600 hover:to-orange-800 
+   shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out
+   relative font-sans' >{data.buy_tokens.text}</strong>
                     </Link>
+                    <br />
                     <i>{data.buy_tokens.note}</i>
+                    <i>*{data.buy_tokens.disclaimer}*</i>
                 </div>
                 <br />
                 <div>
                     <h1 className='text-xl sm:text-xl font-bold mb-6 px-10'>{data.october_giving.heading}</h1>
                 </div>
+                <div className='flex flex-col w-[60vw] h-[40vh] sm:h-[60vh] justify-center items-center align-center  md:pt-10 md:pr-30 md:pl-30 pr-0 pl-0 sm:pr-40 sm:pl-40'>
+
+
+                    <iframe
+                        className='rounded sm:w-[50vw] sm:h-[25vw]'
+                        src={data.october_giving.video_src}
+                        title={data.october_giving.title}
+                        style={{ border: 'none', width: '100%', height: '100%' }} // Set iframe to fill the container
+                        allow={data.october_giving.video.allow.join(', ')}
+                    ></iframe>
+
+                </div>
+                <br />
+                <div className='rounded w-[83%] h-50 text-wrap text-justify flex-col pr-0 pl-0 sm:pr-20 sm:pl-20  '>
+                    <h3 className='text-justify text-sm sm:text-base sm:pr-60 sm:pl-60 font-bold'>{data.feed_ontario.heading}</h3>
+                    <p className='text-justify text-sm sm:text-base  sm:pr-60 sm:pl-60'>{data.feed_ontario.description}</p>
+                </div>
+                <br />
                 <div>
                     <iframe
                         className='rounded sm:w-[40vw] sm:h-[25vw]'
@@ -109,10 +132,7 @@ export default function EvermoreFund() {
                     ></iframe>
                 </div>
                 <br />
-                <div className='rounded w-[83%] h-50 text-wrap text-justify flex-col pr-0 pl-0 sm:pr-20 sm:pl-20  '>
-                    <h3 className='text-justify text-sm sm:text-base sm:pr-60 sm:pl-60 font-bold'>{data.feed_ontario.heading}</h3>
-                    <p className='text-justify text-sm sm:text-base  sm:pr-60 sm:pl-60'>{data.feed_ontario.description}</p>
-                </div>
+
             </div>
             <div>
                 <Footer />
