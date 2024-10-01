@@ -48,10 +48,15 @@ const Body: React.FC = () => {
 
                 {/* Evermore Fund Section */}
                 <div className='mb-10'>
-                    <h1 className="text-xl sm:text-2xl font-bold">Evermore Fund: <i>Support Sheridan Swiftie Club & Make a Difference</i></h1>
+                    <h1 className="text-xl sm:text-2xl font-bold"><a href="/evermorefund" className='hover:text-white hover:font-bold ' >Evermore Fund:</a> <i>Support Sheridan Swiftie Club & Make a Difference</i></h1>
                     <p className='text-justify text-sm sm:text-base mt-4'>
                         To celebrate the Sheridan Swiftie Club&apos;s first anniversary, we&apos;re thrilled to announce the Evermore Fund, our year-long initiative aimed at supporting club activities and contributing to charitable causes. Starting on October 1, 2024, this exciting new chapter allows both members and supporters to make a positive impact on the club and the community.
                     </p>
+                    <br />
+                    <p>buy <a href="/evermorefund" className='hover:text-white hover:font-bold text-white font-bold py-2 px-4 rounded
+   bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-600 hover:to-orange-800 
+   shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out
+   relative font-sans' >Evermore</a> tokens to support & win <i>TTPD Tote Bags</i></p>
                 </div>
             </div>
 
