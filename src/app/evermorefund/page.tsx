@@ -28,6 +28,7 @@ interface BuyTokens {
     link: string;
     text: string;
     note: string;
+    disclaimer: string;
 }
 
 interface Video {
@@ -39,6 +40,8 @@ interface Video {
 interface OctoberGiving {
     heading: string;
     video: Video;
+    video_src: string;
+    title: string;
 }
 
 interface FeedOntario {
