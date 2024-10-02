@@ -82,6 +82,10 @@ export default function EvermoreFund() {
                         width={data.intro.image.width}
                         height={data.intro.image.height}
                     />
+                    <p className='text-center text-sm sm:text-base mt-4 font-mono'>
+                        $1 will serve two meals! <br />Buy Evermore tokens to enter our events and <br /> support club initiatives.
+                    </p>
+                    <br />
                     <div className='rounded w-[80%] h-50 text-wrap text-justify flex-col '>
                         {data.intro.description.map((desc, index) => (
                             <p className='text-justify text-sm sm:text-base mt-4 sm:pr-60 sm:pl-60' key={index}>
@@ -91,7 +95,7 @@ export default function EvermoreFund() {
                     </div>
                 </div>
                 <div className='flex flex-col justify-center items-center align-center  md:pt-10 md:pr-30 md:pl-30 pr-0 pl-0 sm:pr-40 sm:pl-40'>
-                    <Link href={data.buy_tokens.link} prefetch={false} className="hover:text-white hover:font-bold text-base">
+                    <Link href={data.october_giving.video_src} prefetch={false} className="hover:text-white hover:font-bold text-base">
                         <strong className='hover:text-white hover:font-bold text-white font-bold py-2 px-4 rounded
    bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-600 hover:to-orange-800 
    shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out
