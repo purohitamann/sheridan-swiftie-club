@@ -1,30 +1,36 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Confetti from 'react-confetti';
 import './Header.css';
 const Header: React.FC = () => {
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const customColors = ['#000000', '#FFFFFF', '#808080', '#E4E2DD'];
     const [isConfettiVisible, setConfettiVisible] = useState(false);
-    const [hasPlayedAudio, setHasPlayedAudio] = useState(false);
 
-    const playAudio = () => {
-        if (audioRef.current && !hasPlayedAudio) {
-            audioRef.current.volume = 0.8;
-            audioRef.current.play();
-            setConfettiVisible(true);
-            // setHasPlayedAudio(true); // Mark audio as played
+    // const playAudio = () => {
+    //     if (audioRef.current && !hasPlayedAudio) {
+    //         audioRef.current.volume = 0.8;
+    //         audioRef.current.play();
+    //         setConfettiVisible(true);
+    //         // setHasPlayedAudio(true); // Mark audio as played
 
-        }
-    };
+    //     }
+    // };
 
+    // useEffect(() => {
+    //     if (typeof window !== 'undefined' && !hasPlayedAudio) {
+    //         audioRef.current = new Audio('/so-high-school-intro.mp3');
+    //         playAudio();
+
+    //     }
+
+    // }, [hasPlayedAudio, playAudio]);
+    const playAudio = useCallback(() => {
+        const audio = new Audio('/so-high-school-intro.mp3');
+        audio.play();
+    }, []);
     useEffect(() => {
-        if (typeof window !== 'undefined' && !hasPlayedAudio) {
-            audioRef.current = new Audio('/so-high-school-intro.mp3');
-            playAudio();
-
-        }
-
-    }, [hasPlayedAudio, playAudio]);
+        playAudio();
+    }, [playAudio]);
 
     return (
         <header className=" flex flex-col justify-center items-center h-[100vh] text-center p-20 ">
