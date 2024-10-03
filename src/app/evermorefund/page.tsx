@@ -71,7 +71,7 @@ export default function EvermoreFund() {
     }
 
     return (
-        <div style={{ fontFamily: 'Cinzel' }} className='' >
+        <div className='font-sans' >
             <div className='flex flex-col justify-center align-center items-center text-[#E4E2DD]  '>
                 <Navbar />
                 <div className='text-xl sm:text-2xl font-bold mb-6'>
@@ -152,7 +152,7 @@ export default function EvermoreFund() {
                 <br />
 
             </div >
-            <div>
+            <div className='font-sans'>
                 <Footer />
             </div>
         </div >
