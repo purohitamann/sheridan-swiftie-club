@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LinkComponent from '../components/LinkComponent/LinkComponent';
 import Article from '../components/Article';
 import Footer from '../components/Footer';
 import Executives from '../components/Executives';
 import Link from 'next/link';
 import TypewriterEffect from './TypeWriterEffect/TypeWriterEffect';
+import Banner from './Banner';
+import Prompt from './Prompt';
 
 const Body: React.FC = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+
     return (
         <section className="flex flex-col justify-start items-center p-4 sm:p-10 w-[100vw] min-h-[100vh]">
             {/* Navigation Links */}
@@ -33,6 +40,17 @@ const Body: React.FC = () => {
                     <p className='text-justify text-sm sm:text-base mt-4'>
                         Join us for events, discussions, and more. We can&apos;t wait to meet you!
                     </p>
+                </div>
+
+                <div className='mb-10 bg-giveway'>
+                    <Banner title='Enter Our Evermore Fund Giveaway' subtitle='win lanyards, car stickers and tote bags' > <div>
+                        <button
+                            onClick={openModal}
+                            className="bg-orange-600 text-white py-2 px-4 rounded-lg hover:bg-orange-700 transition-transform duration-300">
+                            Enter Giveaway
+                        </button>
+                        <Prompt isOpen={isModalOpen} onClose={closeModal} />
+                    </div></Banner>
                 </div>
 
                 {/* History Section */}

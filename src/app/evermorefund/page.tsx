@@ -6,6 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Footer from '@/components/Footer'
 import fundData from '@/data/evermorefund.json'
+import Prompt from '@/components/Prompt'
+
 
 interface ImageData {
     src: string;
@@ -59,14 +61,17 @@ interface EvermoreFundData {
 
 export default function EvermoreFund() {
     const [data, setData] = useState<EvermoreFundData | null>(fundData);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
 
     if (!data) {
         return <div>Loading...</div>; // Handle loading state
     }
 
     return (
-        <div style={{ fontFamily: 'Cinzel' }} className='' >
+        <div className='font-sans' >
             <div className='flex flex-col justify-center align-center items-center text-[#E4E2DD]  '>
                 <Navbar />
                 <div className='text-xl sm:text-2xl font-bold mb-6'>
@@ -85,6 +90,15 @@ export default function EvermoreFund() {
                     <p className='text-center text-sm sm:text-base mt-4 font-mono'>
                         $1 will serve two meals! <br />Buy Evermore tokens to enter our events and <br /> support club initiatives.
                     </p>
+                    <br />
+                    <div>
+                        <button
+                            onClick={openModal}
+                            className="bg-orange-600 text-white py-2 px-4 rounded-lg hover:bg-orange-700 transition-transform duration-300">
+                            Enter Giveaway
+                        </button>
+                        <Prompt isOpen={isModalOpen} onClose={closeModal} />
+                    </div>
                     <br />
                     <div className='rounded w-[80%] h-50 text-wrap text-justify flex-col '>
                         {data.intro.description.map((desc, index) => (
@@ -137,10 +151,10 @@ export default function EvermoreFund() {
                 </div>
                 <br />
 
-            </div>
-            <div>
+            </div >
+            <div className='font-sans'>
                 <Footer />
             </div>
-        </div>
+        </div >
     )
 }
