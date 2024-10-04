@@ -123,7 +123,7 @@ export default function EvermoreFund() {
                 <div>
                     <h1 className='text-xl sm:text-xl font-bold mb-6 px-10'>{data.october_giving.heading}</h1>
                 </div>
-                <div className='flex flex-col w-[80vw] sm:w-[60vw] h-[70vh] sm:h-[80vh] justify-center items-center align-center  md:pt-10 md:pr-30 md:pl-30 pr-0 pl-0 sm:pr-40 sm:pl-40'>
+                <div className='flex flex-col w-[70vw] sm:w-[60vw] h-[70vh] sm:h-[80vh] justify-center items-center align-center  md:pt-10 md:pr-30 md:pl-30 pr-0 pl-0 sm:pr-40 sm:pl-40'>
 
 
                     <iframe
