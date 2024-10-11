@@ -9,6 +9,29 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		keyframes: {
+			jitter: {
+				'0%': { transform: 'translate(0, 0)' },
+				'25%': { transform: 'translate(0px, 2px)' },
+				'50%': { transform: 'translate(0px, 2px)' },
+				'75%': { transform: 'translate(0px, 2px)' },
+				'100%': { transform: 'translate(0px, 2px)' }
+			  },
+			  
+        blink: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0' }
+        },
+			comic: {
+			  '0%, 100%': { transform: 'scale(1.01)' },
+			  '50%': { transform: 'scale(1.03)' }
+			}
+		  },
+		  animation: {
+			jitter: 'jitter 0.3s infinite',
+			comic: 'comic 1s ease-in-out infinite',
+			blink: 'blink  1s step-start infinite',
+		  },
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
@@ -58,7 +81,8 @@ const config: Config = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
+  			},
+	
   		}
   	}
   },

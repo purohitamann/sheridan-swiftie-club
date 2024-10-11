@@ -7,7 +7,7 @@ import Link from 'next/link';
 import TypewriterEffect from './TypeWriterEffect/TypeWriterEffect';
 import Banner from './Banner';
 import Prompt from './Prompt';
-
+import SwiftvilleButton from './SwiftvilleButton';
 const Body: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -23,7 +23,13 @@ const Body: React.FC = () => {
                 <Link href="https://forms.gle/Fc63swf8ZpRHEG9r9" className='hover:text-white hover:font-bold text-sm sm:text-base'>Join The Team</Link>
                 <Link href="https://sheridancollege.campuslabs.ca/engage/organization/sheridanswiftieclub/events" className='hover:text-white hover:font-bold text-sm sm:text-base'>Events</Link>
             </section>
+            <div className='animate-jitter'>
+                <SwiftvilleButton string="Enter Swiftville" link="/swiftville" />
 
+            </div>
+            <br />
+            <p className='text-[#5193de] font-bold border-b-2 border-[#e358a2]  text-sm sm:text-base  animate-comic'>we polish up NICE!!!</p>
+            <br />
             {/* Main Content */}
             <div
                 style={{ fontFamily: 'Cinzel' }}
