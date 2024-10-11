@@ -2,9 +2,21 @@ import React from 'react'
 import { Kaushan_Script, Cinzel } from 'next/font/google'
 import Backdrop from '@/components/Backdrop' // Import Backdrop component
 import SwiftvilleButton from '@/components/SwiftvilleButton'
+import eventData from '@/data/events.json'
+import EventCard from '@/components/EventCard'
+import Footer from '@/components/Footer'
 const kaushan = Kaushan_Script({ subsets: ['latin'], weight: '400' })
 const alfa = Cinzel({ subsets: ['latin'], weight: '400' })
-
+type Event = {
+    title: string
+    description: string
+    date: string
+    time: string
+    location: string
+    link: string
+    image: string
+    type: string
+}
 const Page: React.FC = () => {
     return (
         <div>
@@ -31,9 +43,25 @@ const Page: React.FC = () => {
 
                 </div>
             </Backdrop>
-            <div className='flex flex-col justify-center items-center w-full h-[100vh]'>
-                <h1 className='text-3xl font-mono text-white' >Coming Soon</h1>
+            <div className='flex flex-col justify-center items-center w-full h-[100vh]  bg-[#F1EBDB] '>
+                <br />
+                <h1 className={`text-3xl font-mono text-center text-[#0060FF] ${kaushan.className}`} >What's Happening in Swiftville!!!</h1>
+                <br />
+
+                <br />
+                {eventData.events.map((event: Event) => (
+
+                    < EventCard title={event.title} description={event.description} image={event.image} date={event.date} time={event.time} location={event.location} link={event.link} type={event.type} />
+
+                ))}
+
+
             </div>
+
+            <div className='bottom-0  bg-[#F1EBDB] '>
+                <Footer />
+            </div>
+
         </div>
     )
 }
