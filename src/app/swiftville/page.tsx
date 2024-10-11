@@ -23,7 +23,7 @@ const Page: React.FC = () => {
 
 
             <Backdrop>
-                <div className="relative z-20 max-w-screen-sm mx-auto flex flex-col justify-center items-center ">
+                <div className="relative z-20 max-w-screen-sm mx-auto flex flex-col justify-center items-center p-auto ">
                     <h3 className={`text-center text-[#0060FF] ${alfa.className} sm:text-lg text-sm  animate-jitter `}>
                         Sheridan Swiftie Club Presents
                     </h3>
@@ -43,7 +43,7 @@ const Page: React.FC = () => {
 
                 </div>
             </Backdrop>
-            <div className='flex flex-col justify-center items-center w-full h-[100vh] py-20  bg-[#F1EBDB] '>
+            <div className='flex flex-col justify-center items-center w-full z-40   bg-[#F1EBDB] '>
                 <br />
                 <h1 className={`text-3xl font-mono text-center text-[#0060FF] ${kaushan.className}`} >What&apos;s Happening in Swiftville!!</h1>
                 <br />
