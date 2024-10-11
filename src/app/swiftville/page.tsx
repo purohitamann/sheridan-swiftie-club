@@ -43,7 +43,7 @@ const Page: React.FC = () => {
 
                 </div>
             </Backdrop>
-            <div className='flex flex-col justify-center items-center w-full h-[100vh]  bg-[#F1EBDB] '>
+            <div className='flex flex-col justify-center items-center w-full h-[100vh] py-20  bg-[#F1EBDB] '>
                 <br />
                 <h1 className={`text-3xl font-mono text-center text-[#0060FF] ${kaushan.className}`} >What&apos;s Happening in Swiftville!!</h1>
                 <br />
