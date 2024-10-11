@@ -1,7 +1,7 @@
 import React from 'react'
 import { Kaushan_Script, Cinzel } from 'next/font/google'
 import Backdrop from '@/components/Backdrop' // Import Backdrop component
-import SwiftvilleButton from '@/components/SwiftvilleButton'
+
 import eventData from '@/data/events.json'
 import EventCard from '@/components/EventCard'
 import Footer from '@/components/Footer'
@@ -45,13 +45,13 @@ const Page: React.FC = () => {
             </Backdrop>
             <div className='flex flex-col justify-center items-center w-full h-[100vh]  bg-[#F1EBDB] '>
                 <br />
-                <h1 className={`text-3xl font-mono text-center text-[#0060FF] ${kaushan.className}`} >What's Happening in Swiftville!!!</h1>
+                <h1 className={`text-3xl font-mono text-center text-[#0060FF] ${kaushan.className}`} >What&apos;s Happening in Swiftville!!</h1>
                 <br />
 
                 <br />
-                {eventData.events.map((event: Event) => (
+                {eventData.events.map((event: Event, index: number) => (
 
-                    < EventCard title={event.title} description={event.description} image={event.image} date={event.date} time={event.time} location={event.location} link={event.link} type={event.type} />
+                    < EventCard key={index} title={event.title} description={event.description} image={event.image} date={event.date} time={event.time} location={event.location} link={event.link} type={event.type} />
 
                 ))}
 
