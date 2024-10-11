@@ -1,0 +1,15 @@
+{
+  "events": [
+    {
+      "key": 1,
+      "title": "Paint Night",
+      "description": "You' re on your own, kid, but not tonight—paint alongside fellow Swifties and let your artistic side shine! We'll host more exciting Swiftville events throughout November, but this paint night is \"the best day\" to start! So grab a brush, choose your favourite Taylor era for inspiration, and let’s \"paint the whole town\" together! See you there, Swifties!",
+      "image": "/assets/poster-pn.png",
+      "date": "11/01/2024",
+      "time": "6:00PM - 8:30PM",
+      "location": "Room C208, Trafalgar Campus",
+      "link": "https://forms.gle/sjPupbQLibxkbn547",
+      "type": "This is a Free Event"
+    }
+  ]
+}

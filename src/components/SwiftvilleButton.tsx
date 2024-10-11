@@ -1,9 +1,9 @@
 import React from 'react'
-import { Kaushan_Script, Cinzel } from 'next/font/google'
+import { Kaushan_Script } from 'next/font/google'
 import Link from 'next/link'
 
 const kaushan = Kaushan_Script({ subsets: ['latin'], weight: '400' })
-const alfa = Cinzel({ subsets: ['latin'], weight: '400' })
+
 export default function SwiftvilleButton({ string, link }: { string: string, link: string }) {
     return (
         <div>

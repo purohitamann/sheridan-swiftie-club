@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 import Navbar from '@/components/Navbar';
-import { Kaushan_Script } from 'next/font/google';
+
 import { Cinzel } from 'next/font/google';
-const kaushan = Kaushan_Script({ subsets: ['latin'], weight: '400' });
+
 const alfa = Cinzel({ subsets: ['latin'], weight: '400' });
 
 interface BackdropProps {
@@ -12,7 +12,7 @@ interface BackdropProps {
 
 const Backdrop: React.FC<BackdropProps> = ({ children }) => {
     return (
-        <div className="w-full h-screen bg-[#F1EBDB] flex justify-center items-center relative overflow-hidden">
+        <div className="w-full h-screen bg-[#F1EBDB] flex justify-center items-center relative ">
             <div className={`absolute z-20 w-full top-0 text-[#0060FF] ${alfa.className} `}>
                 <Navbar />
             </div>

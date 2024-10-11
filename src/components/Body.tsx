@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import LinkComponent from '../components/LinkComponent/LinkComponent';
-import Article from '../components/Article';
+
 import Footer from '../components/Footer';
 import Executives from '../components/Executives';
 import Link from 'next/link';
