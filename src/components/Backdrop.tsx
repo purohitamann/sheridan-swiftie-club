@@ -8,11 +8,12 @@ const alfa = Cinzel({ subsets: ['latin'], weight: '400' });
 
 interface BackdropProps {
     children: React.ReactNode;
+    className?: string;
 }
 
-const Backdrop: React.FC<BackdropProps> = ({ children }) => {
+const Backdrop: React.FC<BackdropProps> = ({ children, className }) => {
     return (
-        <div className="w-full h-screen bg-[#F1EBDB] flex justify-center items-center relative ">
+        <div className={`w-full h-screen bg-[#F1EBDB] flex justify-center items-center relative ${className} `}>
             <div className={`absolute z-20 w-full top-0 text-[#0060FF] ${alfa.className} `}>
                 <Navbar />
             </div>

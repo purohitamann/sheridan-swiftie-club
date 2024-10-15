@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Cinzel } from "next/font/google";
 import "./globals.css";
-import ThemeWrapper from "../components/ThemeWrapper/ThemeWrapper";
-import Footer from "../components/Footer";
 
+import {
+  ClerkProvider,
+
+} from '@clerk/nextjs'
 const inter = Inter({ subsets: ["latin"] });
 const cinzel = Cinzel({ subsets: ["latin"] });
 
-
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Sheridan Swiftie Club",
@@ -22,17 +24,20 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" style={{ fontFamily: 'Cinzel' }}>
+    <ClerkProvider>
+      <html lang="en" style={{ fontFamily: 'Cinzel' }}>
 
 
-      <body className={`${inter.className} ${cinzel.className}`} style={{ fontFamily: 'Cinzel' }} >
-        <div>
-          {children}</div>
+        <body className={`${inter.className} ${cinzel.className}`} style={{ fontFamily: 'Cinzel' }} >
+          <div>
+
+            {children}</div>
 
 
-      </body>
+        </body>
 
 
-    </html >
+      </html >
+    </ClerkProvider>
   );
 }
