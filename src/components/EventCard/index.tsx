@@ -28,6 +28,7 @@ export default function index(event: Event) {
                 <p className="font-thin">{event.location}</p>
                 <SwiftvilleButton string='RSVP' link={event.link} />
                 <p className="font-thin lowercase font-mono  italic animate-blink ">{event.type}</p>
+                <br />
             </div>
 
         </div>

@@ -5,7 +5,7 @@ import Backdrop from '@/components/Backdrop' // Import Backdrop component
 import eventData from '@/data/events.json'
 import EventCard from '@/components/EventCard'
 import Footer from '@/components/Footer'
-import SwiftvilleButton from '@/components/SwiftvilleButton'
+
 const kaushan = Kaushan_Script({ subsets: ['latin'], weight: '400' })
 const alfa = Cinzel({ subsets: ['latin'], weight: '400' })
 type Event = {

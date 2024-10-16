@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { SignInButton, SignedIn, SignedOut, UserButton, SignIn } from '@clerk/nextjs';
 import { z } from "zod";
@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-
+import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import {
     Form,
@@ -19,7 +19,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
-import { getAuth, signInWithCustomToken } from "firebase/auth";
+// import { getAuth, signInWithCustomToken } from "firebase/auth";
+import Submission from './Submission';
 
 
 const formSchema = z.object({
@@ -56,6 +57,7 @@ type Props = {
 export default function RSVPForm(formProps: Props) {
     const { isLoaded, isSignedIn, user } = useUser();
     const { formTitle, formDescription, currentEventId, currentEventCampus = 'Trafalgar Campus' } = formProps;
+    const [modal, setModal] = useState(false);
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -84,17 +86,17 @@ export default function RSVPForm(formProps: Props) {
             </div>
         );
     }
-    async function authenticateWithFirebase() {
-        const { user } = useUser(); // Clerk user object
-        try {
-            const firebaseToken = await user.getToken(); // Get token from Clerk
-            const auth = getAuth();
-            await signInWithCustomToken(auth, firebaseToken); // Sign in to Firebase with token
-            console.log("Authenticated with Firebase!");
-        } catch (error) {
-            console.error("Error authenticating with Firebase:", error);
-        }
-    }
+    // async function authenticateWithFirebase() {
+    //     const { user } = useUser(); // Clerk user object
+    //     try {
+    //         const firebaseToken = await user.getToken(); // Get token from Clerk
+    //         const auth = getAuth();
+    //         await signInWithCustomToken(auth, firebaseToken); // Sign in to Firebase with token
+    //         console.log("Authenticated with Firebase!");
+    //     } catch (error) {
+    //         console.error("Error authenticating with Firebase:", error);
+    //     }
+    // }
     async function onSubmit(values: z.infer<typeof formSchema>) {
 
         try {
@@ -103,11 +105,15 @@ export default function RSVPForm(formProps: Props) {
             await addDoc(collection(db, "paint-night-rsvps"), values);
             console.log("Form submitted successfully:", values);
             alert("RSVP submitted successfully!");
+            setModal(true);
         } catch (error) {
             console.error("Error submitting form:", error);
             alert("Failed to submit RSVP. Please try again.");
         }
         console.log("Form submitted:", values);
+        // return (
+        //     // <Submission />
+        // )
     }
 
     return (
@@ -228,12 +234,14 @@ export default function RSVPForm(formProps: Props) {
                         name="termsAccepted"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Terms and Conditions</FormLabel>
+                                <FormLabel>Terms and Conditions  </FormLabel>
                                 <FormControl>
-                                    <input
-                                        type="checkbox"
-                                        {...field}
-                                        checked={field.value ? true : false}
+
+                                    <Checkbox
+
+                                        checked={field.value}
+                                        onCheckedChange={field.onChange}
+
                                     />
                                 </FormControl>
                                 <FormDescription>
@@ -244,7 +252,8 @@ export default function RSVPForm(formProps: Props) {
                         )}
                     />
                     <FormField control={form.control} name="date" render={() => <div></div>} />
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit" className='w-full'>Submit</Button>
+                    <Submission eventName={formProps.formTitle} open={modal} />
                 </form>
             </Form>
         </div>

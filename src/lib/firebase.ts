@@ -4,20 +4,6 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { getAuth, signInWithCustomToken } from "firebase/auth";
-import { useUser } from '@clerk/nextjs';
-
-export async function syncClerkWithFirebase() {
-    const { user } = useUser(); // Get Clerk user
-    try {
-        const firebaseToken = await user.getToken('firebase'); // Get Firebase token from Clerk
-        const auth = getAuth(); // Initialize Firebase Auth
-        await signInWithCustomToken(auth, firebaseToken); // Sign in Firebase with Clerk token
-        console.log("Successfully authenticated with Firebase");
-    } catch (error) {
-        console.error("Error authenticating with Firebase:", error);
-    }
-}
 
 
 // Your web app's Firebase configuration

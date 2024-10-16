@@ -5,7 +5,7 @@ import { getAuth, signInWithCustomToken } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import { doc, getDoc, } from 'firebase/firestore'
 import React from 'react'
-import { date } from 'zod'
+
 // Add your Firebase config object
 const firebaseConfig = {
     apiKey: "AIzaSyDF2UqHEM11nOj43BX2g7gzvJ2r1ue0kTU",

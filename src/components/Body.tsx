@@ -3,7 +3,7 @@ import LinkComponent from '../components/LinkComponent/LinkComponent';
 
 import Footer from '../components/Footer';
 import Executives from '../components/Executives';
-import Link from 'next/link';
+
 import TypewriterEffect from './TypeWriterEffect/TypeWriterEffect';
 import Banner from './Banner';
 import Prompt from './Prompt';

@@ -1,17 +1,13 @@
 'use client'
 
-import Backdrop from '@/components/Backdrop'
+
 import Navbar from '@/components/Navbar'
 import RSVPForm from '@/components/RSVPForm'
 import Image from 'next/image'
 import React from 'react'
-import { useEffect } from 'react'
-import { syncClerkWithFirebase } from '@/lib/firebase'
 
 export default function PaintNight() {
-    useEffect(() => {
-        syncClerkWithFirebase(); // Sync Clerk with Firebase on mount
-    }, []);
+
 
     return (
         <div className='min-h-screen w-full flex flex-col justify-center items-center bg-[#F1EBDB] relative overflow-hidden'>
@@ -60,7 +56,7 @@ export default function PaintNight() {
             </div>
 
             {/* Top-right positioned images */}
-            <div className="absolute opacity-65 sm:top-20 sm:left-3/2 sm:-right-10 sm:bottom-72">
+            {/* <div className="absolute opacity-65 sm:top-20 sm:left-3/2 sm:-right-10 sm:bottom-72">
                 <Image
                     src="/assets/tune.png"
                     alt="logo"
@@ -81,10 +77,32 @@ export default function PaintNight() {
                     width={250}
                     height={250}
                 />
-            </div>
+            </div> */}
 
-            {/* Bottom-right positioned images */}
-            <div className="absolute opacity-50 bottom-10 right-10">
+            <div className="absolute opacity-50 bottom-10 left-10 ">
+                <Image
+                    src="/assets/drop.png"
+                    alt="drop-bg"
+                    width={250}
+                    height={250}
+                    className="rotate-90 "
+                />
+                <Image
+                    src="/assets/tune.png"
+                    alt="logo"
+                    width={90}
+                    height={50}
+                    className="mt-5"
+                />
+                <Image
+                    src="/assets/tune.png"
+                    alt="logo"
+                    width={90}
+                    height={50}
+                    className="mt-2 rotate-45"
+                />
+            </div>
+            <div className="absolute opacity-50 bottom-30 right-10">
                 <Image
                     src="/assets/drop.png"
                     alt="drop-bg"
@@ -105,6 +123,29 @@ export default function PaintNight() {
                     width={90}
                     height={50}
                     className="mt-2 rotate-45"
+                />
+            </div>
+            <div className="absolute opacity-50 top-80 left-10">
+                <Image
+                    src="/assets/drop.png"
+                    alt="drop-bg"
+                    width={250}
+                    height={250}
+                    className="rotate-90 hidden sm:block"
+                />
+                <Image
+                    src="/assets/tune.png"
+                    alt="logo"
+                    width={90}
+                    height={50}
+                    className="mt-5 hidden sm:block"
+                />
+                <Image
+                    src="/assets/tune.png"
+                    alt="logo"
+                    width={90}
+                    height={50}
+                    className="mt-2 rotate-45 hidden sm:block"
                 />
             </div>
         </div>
