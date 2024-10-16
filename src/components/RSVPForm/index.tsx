@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { useUser } from '@clerk/nextjs';
-import { SignInButton, SignedIn, SignedOut, UserButton, SignIn } from '@clerk/nextjs';
+import React, { useState, useEffect } from 'react';
+
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "@/lib/firebase";
+import { collection, addDoc } from 'firebase/firestore';
+import { firestore } from '@/lib/firebase';
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+
 import {
     Form,
     FormControl,
@@ -19,17 +19,12 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
-// import { getAuth, signInWithCustomToken } from "firebase/auth";
 import Submission from './Submission';
-
 
 const formSchema = z.object({
     eventId: z.number(),
     eventName: z.string(),
     eventCampus: z.string(),
-    defaultEmail: z.string().min(2, {
-        message: "You must login to RSVP",
-    }),
     studentName: z.string().min(2, {
         message: "Please enter your full name, e.g., Taylor Alison Swift",
     }),
@@ -44,6 +39,9 @@ const formSchema = z.object({
         message: "You must accept the terms and conditions",
     }),
     date: z.date(),
+    registrationId: z.string().min(2, {
+        message: "Please enter your registration ID",
+    }),
 });
 
 type Props = {
@@ -54,8 +52,28 @@ type Props = {
     className?: string;
 };
 
+type User = {
+    emailAddress: string;
+    fullName: string;
+    studentId: string;
+    registrationId: string;
+}
+
 export default function RSVPForm(formProps: Props) {
-    const { isLoaded, isSignedIn, user } = useUser();
+    const isLoaded = true;
+    const isSignedIn = true;
+    const [fullName, setFullName] = useState('there');
+    const [studentEmail, setStudentEmail] = useState('');
+    const [registrationId, setRegistrationId] = useState<string>();
+    const [studentId, setStudentId] = useState('');
+
+    const user: User = {
+        emailAddress: studentEmail,
+        fullName: fullName,
+        studentId: studentId,
+        registrationId: registrationId!,
+    }
+
     const { formTitle, formDescription, currentEventId, currentEventCampus = 'Trafalgar Campus' } = formProps;
     const [modal, setModal] = useState(false);
 
@@ -65,44 +83,32 @@ export default function RSVPForm(formProps: Props) {
             eventId: currentEventId,
             eventName: formTitle,
             eventCampus: currentEventCampus,
-            defaultEmail: user?.primaryEmailAddress?.emailAddress || 'student@gmail.com',
-            studentName: user?.fullName || '',
+            studentName: '',
             studentEmail: '',
             studentId: "",
             message: '',
             termsAccepted: false,
             date: new Date(),
+            registrationId: registrationId,
         },
     });
 
-    if (!isLoaded) {
-        return <p className="text-3xl text-white">Loading...</p>;
+    useEffect(() => {
+        if (studentId) {
+            const generatedId = generateRegistrationId(new Date(), studentId);
+            setRegistrationId(generatedId);
+            form.setValue('registrationId', generatedId);
+        }
+    }, [studentId]);
+
+    function generateRegistrationId(date: Date, studentId: string) {
+        const id = Math.random().toString(36).substring(2, 10).toUpperCase();
+        return `${id}${date.getUTCDate()}${studentId}`;
     }
 
-    if (!isSignedIn) {
-        return (
-            <div className='flex flex-col justify-center items-center bg-slate-50 m-10'>
-                <SignIn />
-            </div>
-        );
-    }
-    // async function authenticateWithFirebase() {
-    //     const { user } = useUser(); // Clerk user object
-    //     try {
-    //         const firebaseToken = await user.getToken(); // Get token from Clerk
-    //         const auth = getAuth();
-    //         await signInWithCustomToken(auth, firebaseToken); // Sign in to Firebase with token
-    //         console.log("Authenticated with Firebase!");
-    //     } catch (error) {
-    //         console.error("Error authenticating with Firebase:", error);
-    //     }
-    // }
     async function onSubmit(values: z.infer<typeof formSchema>) {
-
         try {
-            // Add form data to Firestore
-
-            await addDoc(collection(db, "paint-night-rsvps"), values);
+            await addDoc(collection(firestore, "paint-night-rsvps"), values);
             console.log("Form submitted successfully:", values);
             alert("RSVP submitted successfully!");
             setModal(true);
@@ -110,48 +116,22 @@ export default function RSVPForm(formProps: Props) {
             console.error("Error submitting form:", error);
             alert("Failed to submit RSVP. Please try again.");
         }
-        console.log("Form submitted:", values);
-        // return (
-        //     // <Submission />
-        // )
     }
 
     return (
         <div className={`flex flex-col justify-center align-center items-center p-20 font-mono ${formProps.className}`}>
-            <div>Hello, <strong> {user.firstName} {user.lastName}!</strong></div>
-            <h1 className='italic'>{user.primaryEmailAddress?.emailAddress}</h1>
+            <div><p className="text-lg text-[#0060FF] ">Hello, <strong> {user.fullName}!</strong></p></div>
             <div className='flex flex-row align-middle justify-between text-center'>
-                <p className='font-bold text-xs underline p-2 '>Is this your primary email address?</p>
-
                 <div>
-
-
-                    <SignedOut><SignInButton /></SignedOut>
-                    <SignedIn><UserButton /></SignedIn>
+                    <Button onClick={() => { window.location.href = "/sign-in" }} className="hover:text-bordered hover:font-bold text-base">Join our NewsLetter</Button>
                 </div>
             </div>
             <h1>{formTitle}</h1>
             <p>{formDescription}</p>
             <h2>{currentEventId}</h2>
 
-            <Form {...form} >
+            <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                    <FormField
-                        control={form.control}
-                        name="defaultEmail"
-                        render={({ field }) => (
-                            <FormItem>
-                                <FormLabel>Default Email</FormLabel>
-                                <FormControl>
-                                    <Input {...field} value={user?.primaryEmailAddress?.emailAddress ? user?.primaryEmailAddress?.emailAddress.trim() : 'student@gmail.com'} />
-                                </FormControl>
-                                <FormDescription>
-                                    This is your default email address.
-                                </FormDescription>
-                                <FormMessage />
-                            </FormItem>
-                        )}
-                    />
                     <FormField
                         control={form.control}
                         name="studentEmail"
@@ -162,11 +142,13 @@ export default function RSVPForm(formProps: Props) {
                                     <Input
                                         {...field}
                                         placeholder="Your student email"
+                                        onChange={(e) => {
+                                            setStudentEmail(e.target.value);
+                                            form.setValue('studentEmail', e.target.value);
+                                        }}
                                     />
                                 </FormControl>
-                                <FormDescription>
-                                    This is your Sheridan College credential.
-                                </FormDescription>
+                                <FormDescription>This is your Sheridan College credential.</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -181,11 +163,13 @@ export default function RSVPForm(formProps: Props) {
                                     <Input
                                         {...field}
                                         placeholder="Taylor Alison Swift"
+                                        onChange={(e) => {
+                                            setFullName(e.target.value);
+                                            form.setValue('studentName', e.target.value);
+                                        }}
                                     />
                                 </FormControl>
-                                <FormDescription>
-                                    Please enter your full name.
-                                </FormDescription>
+                                <FormDescription>Please enter your full name.</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -201,11 +185,13 @@ export default function RSVPForm(formProps: Props) {
                                         {...field}
                                         placeholder="99XXXX96"
                                         type="number"
+                                        onChange={(e) => {
+                                            setStudentId(e.target.value);
+                                            form.setValue('studentId', e.target.value);
+                                        }}
                                     />
                                 </FormControl>
-                                <FormDescription>
-                                    Please enter your student ID.
-                                </FormDescription>
+                                <FormDescription>Please enter your student ID.</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -217,14 +203,9 @@ export default function RSVPForm(formProps: Props) {
                             <FormItem>
                                 <FormLabel>Comments</FormLabel>
                                 <FormControl>
-                                    <Input
-                                        {...field}
-                                        placeholder="Anything else we should know?"
-                                    />
+                                    <Input {...field} placeholder="Anything else we should know?" />
                                 </FormControl>
-                                <FormDescription>
-                                    You can leave any additional comments here.
-                                </FormDescription>
+                                <FormDescription>You can leave any additional comments here.</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
@@ -234,26 +215,22 @@ export default function RSVPForm(formProps: Props) {
                         name="termsAccepted"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Terms and Conditions  </FormLabel>
+                                <FormLabel>Terms and Conditions</FormLabel>
                                 <FormControl>
-
                                     <Checkbox
-
                                         checked={field.value}
                                         onCheckedChange={field.onChange}
-
                                     />
                                 </FormControl>
-                                <FormDescription>
-                                    Do you consent to being photographed at the event?
-                                </FormDescription>
+                                <FormDescription>Do you consent to being photographed at the event?</FormDescription>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
                     <FormField control={form.control} name="date" render={() => <div></div>} />
+                    <FormField control={form.control} name="registrationId" render={() => <div>{registrationId}</div>} />
                     <Button type="submit" className='w-full'>Submit</Button>
-                    <Submission eventName={formProps.formTitle} open={modal} />
+                    <Submission eventName={formProps.formTitle} open={modal} user={user} />
                 </form>
             </Form>
         </div>

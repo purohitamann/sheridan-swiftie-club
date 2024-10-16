@@ -3,10 +3,7 @@ import { Inter } from "next/font/google";
 import { Cinzel } from "next/font/google";
 import "./globals.css";
 
-import {
-  ClerkProvider,
 
-} from '@clerk/nextjs'
 const inter = Inter({ subsets: ["latin"] });
 const cinzel = Cinzel({ subsets: ["latin"] });
 
@@ -24,20 +21,20 @@ export default function RootLayout({
 }>) {
 
   return (
-    <ClerkProvider>
-      <html lang="en" style={{ fontFamily: 'Cinzel' }}>
+
+    <html lang="en" style={{ fontFamily: 'Cinzel' }}>
 
 
-        <body className={`${inter.className} ${cinzel.className}`} style={{ fontFamily: 'Cinzel' }} >
-          <div>
+      <body className={`${inter.className} ${cinzel.className}`} style={{ fontFamily: 'Cinzel' }} >
+        <div>
 
-            {children}</div>
-
-
-        </body>
+          {children}</div>
 
 
-      </html >
-    </ClerkProvider>
+      </body>
+
+
+    </html >
+
   );
 }
