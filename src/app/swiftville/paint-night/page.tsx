@@ -1,10 +1,10 @@
-'use client'
+'use client';
 
 
-import Navbar from '@/components/Navbar'
-import RSVPForm from '@/components/RSVPForm'
-import Image from 'next/image'
-import React from 'react'
+import Navbar from '@/components/Navbar';
+import RSVPForm from '@/components/RSVPForm';
+import Image from 'next/image';
+import React from 'react';
 
 export default function PaintNight() {
 
@@ -149,5 +149,5 @@ export default function PaintNight() {
                 />
             </div>
         </div>
-    )
+    );
 }

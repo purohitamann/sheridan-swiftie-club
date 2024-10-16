@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
 import { collection, addDoc } from 'firebase/firestore';
 import { firestore } from '@/lib/firebase';
-import { Checkbox } from "@/components/ui/checkbox";
-import { Button } from "@/components/ui/button";
-
+import { Checkbox } from '@/components/ui/checkbox';
+import { Button } from '@/components/ui/button';
 import {
     Form,
     FormControl,
@@ -16,9 +14,8 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
 import Submission from './Submission';
 
 const formSchema = z.object({
@@ -26,21 +23,21 @@ const formSchema = z.object({
     eventName: z.string(),
     eventCampus: z.string(),
     studentName: z.string().min(2, {
-        message: "Please enter your full name, e.g., Taylor Alison Swift",
+        message: 'Please enter your full name, e.g., Taylor Alison Swift',
     }),
     studentEmail: z.string().email({
-        message: "Please enter a valid email address",
+        message: 'Please enter a valid email address',
     }),
     studentId: z.string().min(7, {
-        message: "Please enter your student ID, e.g., 99XXXX96",
+        message: 'Please enter your student ID, e.g., 99XXXX96',
     }),
     message: z.string().optional(),
     termsAccepted: z.boolean().refine(val => val, {
-        message: "You must accept the terms and conditions",
+        message: 'You must accept the terms and conditions',
     }),
     date: z.date(),
     registrationId: z.string().min(2, {
-        message: "Please enter your registration ID",
+        message: 'Please enter your registration ID',
     }),
 });
 
@@ -57,22 +54,20 @@ type User = {
     fullName: string;
     studentId: string;
     registrationId: string;
-}
+};
 
 export default function RSVPForm(formProps: Props) {
-    const isLoaded = true;
-    const isSignedIn = true;
-    const [fullName, setFullName] = useState('there');
+    const [fullName, setFullName] = useState('');
     const [studentEmail, setStudentEmail] = useState('');
-    const [registrationId, setRegistrationId] = useState<string>();
+    const [registrationId, setRegistrationId] = useState<string>('');
     const [studentId, setStudentId] = useState('');
 
     const user: User = {
         emailAddress: studentEmail,
         fullName: fullName,
         studentId: studentId,
-        registrationId: registrationId!,
-    }
+        registrationId: registrationId,
+    };
 
     const { formTitle, formDescription, currentEventId, currentEventCampus = 'Trafalgar Campus' } = formProps;
     const [modal, setModal] = useState(false);
@@ -85,11 +80,11 @@ export default function RSVPForm(formProps: Props) {
             eventCampus: currentEventCampus,
             studentName: '',
             studentEmail: '',
-            studentId: "",
+            studentId: '',
             message: '',
             termsAccepted: false,
             date: new Date(),
-            registrationId: registrationId,
+            registrationId: '',
         },
     });
 
@@ -108,22 +103,29 @@ export default function RSVPForm(formProps: Props) {
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
         try {
-            await addDoc(collection(firestore, "paint-night-rsvps"), values);
-            console.log("Form submitted successfully:", values);
-            alert("RSVP submitted successfully!");
+            // Ensure registrationId is set before submission
+            if (!values.registrationId) {
+                const generatedId = generateRegistrationId(new Date(), values.studentId);
+                setRegistrationId(generatedId);
+                values.registrationId = generatedId;
+            }
+
+            // Save the registration to Firestore
+            await addDoc(collection(firestore, 'paint-night-rsvps'), values);
+
             setModal(true);
         } catch (error) {
-            console.error("Error submitting form:", error);
-            alert("Failed to submit RSVP. Please try again.");
+            console.error('Error submitting form:', error);
+            alert('Failed to submit RSVP. Please try again.');
         }
     }
 
     return (
         <div className={`flex flex-col justify-center align-center items-center p-20 font-mono ${formProps.className}`}>
-            <div><p className="text-lg text-[#0060FF] ">Hello, <strong> {user.fullName}!</strong></p></div>
-            <div className='flex flex-row align-middle justify-between text-center'>
+            <div><p className="text-lg text-[#0060FF]">Hello, <strong>{user.fullName || 'there'}!</strong></p></div>
+            <div className="flex flex-row align-middle justify-between text-center">
                 <div>
-                    <Button onClick={() => { window.location.href = "/sign-in" }} className="hover:text-bordered hover:font-bold text-base">Join our NewsLetter</Button>
+                    <Button onClick={() => { window.location.href = '/sign-in'; }} className="hover:text-bordered hover:font-bold text-base">Join our Newsletter</Button>
                 </div>
             </div>
             <h1>{formTitle}</h1>
@@ -229,7 +231,7 @@ export default function RSVPForm(formProps: Props) {
                     />
                     <FormField control={form.control} name="date" render={() => <div></div>} />
                     <FormField control={form.control} name="registrationId" render={() => <div>{registrationId}</div>} />
-                    <Button type="submit" className='w-full'>Submit</Button>
+                    <Button type="submit" className="w-full">Submit</Button>
                     <Submission eventName={formProps.formTitle} open={modal} user={user} />
                 </form>
             </Form>

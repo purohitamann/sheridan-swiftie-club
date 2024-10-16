@@ -1,6 +1,6 @@
-import React from 'react'
-import "./index.css";
-import Image from 'next/image'
+import React from 'react';
+import './index.css';
+import Image from 'next/image';
 interface Props {
     fullName: string;
     profilePic: string;
@@ -33,5 +33,5 @@ export default function index(props: Props) {
                 </div>
             </div>
         </div>
-    )
+    );
 }

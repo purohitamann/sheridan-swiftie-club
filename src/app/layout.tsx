@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Cinzel } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { Cinzel } from 'next/font/google';
+import './globals.css';
 
 
-const inter = Inter({ subsets: ["latin"] });
-const cinzel = Cinzel({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
+const cinzel = Cinzel({ subsets: ['latin'] });
 
-import React from "react";
+import React from 'react';
 
 export const metadata: Metadata = {
-  title: "Sheridan Swiftie Club",
-  description: "The official website for Sheridan Swiftie Club",
+  title: 'Sheridan Swiftie Club',
+  description: 'The official website for Sheridan Swiftie Club',
 };
 
 export default function RootLayout({

@@ -1,5 +1,5 @@
-import React from 'react'
-import Image from 'next/image'
+import React from 'react';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 
 import { Cinzel } from 'next/font/google';
@@ -78,7 +78,7 @@ const Backdrop: React.FC<BackdropProps> = ({ children, className }) => {
 
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Backdrop;

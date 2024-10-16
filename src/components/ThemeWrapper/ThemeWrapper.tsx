@@ -1,6 +1,6 @@
 'use client';
-import React from 'react'
-import { Inter } from 'next/font/google';
+import React from 'react';
+
 import './ThemeWrapper.css';
 import { useGoogleAnalytics } from '../../lib/gtag';
 
@@ -10,7 +10,7 @@ export default function ThemeWrapper({ children }: Readonly<{ children: React.Re
         <div className="theme-wrapper">
             {children}
         </div>
-    )
+    );
 }
 
 

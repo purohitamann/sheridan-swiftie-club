@@ -35,7 +35,7 @@ export default function SignUpPage() {
         } catch (error) {
             console.error('Failed to sign in:', error);
         }
-    }
+    };
     return (
         <div>
 

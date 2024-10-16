@@ -1,10 +1,10 @@
 
-import { initializeApp } from "firebase/app";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import { initializeApp } from 'firebase/app';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 // import {  collection, getDocs, updateDoc } from 'firebase/firestore';
 
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 const provider = new GoogleAuthProvider();
 provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
@@ -32,22 +32,22 @@ export const firestore = getFirestore(app);
 export function googleAuth() { signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
+    // const credential = GoogleAuthProvider.credentialFromResult(result);
+    // const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
     // IdP data available using getAdditionalUserInfo(result)
     // ...
     console.log('User signed in:', user);
     
-  }).catch((error) => {
+  }).catch(() => {
     // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
+    // const errorCode = error.code;
+    // const errorMessage = error.message;
+    // // The email of the user's account used.
+    // const email = error.customData.email;
+    // // The AuthCredential type that was used.
+    // const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
   });}
 // Create a new user with email and password
@@ -109,28 +109,28 @@ export const getUserFromDatabase = async (userId: string) => {
     if (userDoc.exists()) {
       return userDoc.data();
     } else {
-      console.error("No such document!");
+      console.error('No such document!');
       return null;
     }
   } catch (error) {
-    console.error("Error fetching user:", error);
+    console.error('Error fetching user:', error);
     throw error;
   }
 };
 
 // Save user data to Firestore
-export const saveUserToDatabase = async (userId: string, userData: any) => {
-  try {
-    await setDoc(doc(firestore, 'users', userId), userData);
-    console.log('User data saved');
-    // await initializeUserStructure(userId);
+// export const saveUserToDatabase = async (userId: string, userData: any) => {
+//   try {
+//     await setDoc(doc(firestore, 'users', userId), userData);
+//     console.log('User data saved');
+//     // await initializeUserStructure(userId);
 
-    // console.log('User signed up and structure initialized');
-  } catch (error) {
-    console.error("Error saving user data:", error);
-    throw error;
-  }
-};
+//     // console.log('User signed up and structure initialized');
+//   } catch (error) {
+//     console.error('Error saving user data:', error);
+//     throw error;
+//   }
+// };
 
 export const initializeUserStructure = async (userId: string) => {
   try {

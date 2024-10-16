@@ -1,6 +1,6 @@
-'use client'
-import ThemeWrapper from '@/components/ThemeWrapper/ThemeWrapper'
-import React from 'react'
+'use client';
+import ThemeWrapper from '@/components/ThemeWrapper/ThemeWrapper';
+import React from 'react';
 
 export default function Events() {
     return (
@@ -22,7 +22,7 @@ export default function Events() {
 
             </ThemeWrapper>
         </div>
-    )
+    );
 }
 
 

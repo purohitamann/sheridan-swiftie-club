@@ -1,6 +1,6 @@
-'use client'
-import RSVPForm from '@/components/RSVPForm'
-import React from 'react'
+'use client';
+import RSVPForm from '@/components/RSVPForm';
+import React from 'react';
 
 
 const page = () => {
@@ -14,7 +14,7 @@ const page = () => {
             <RSVPForm formTitle="Swiftville Resident" formDescription="Apply to become a Swiftville citizen, prepare for the resident test!  " currentEventId={100} currentEventCampus="Trafalgar Campus" />
 
         </div>
-    )
-}
+    );
+};
 
-export default page
+export default page;
