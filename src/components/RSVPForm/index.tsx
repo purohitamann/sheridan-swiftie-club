@@ -94,7 +94,7 @@ export default function RSVPForm(formProps: Props) {
             setRegistrationId(generatedId);
             form.setValue('registrationId', generatedId);
         }
-    }, [studentId]);
+    }, [studentId]);// eslint-disable-line 
 
     function generateRegistrationId(date: Date, studentId: string) {
         const id = Math.random().toString(36).substring(2, 10).toUpperCase();
