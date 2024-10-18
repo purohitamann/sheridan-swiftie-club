@@ -1,6 +1,6 @@
-import Article from '@/components/Article';
+
 import React from 'react';
-import WinterExec from '/winter.svg';
+
 import './index.css';
 // import "../globals.css";
 import Banner from '@/components/Banner';

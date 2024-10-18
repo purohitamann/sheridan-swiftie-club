@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { useState } from 'react';
-import { googleAuth, loginUser } from '@/lib/firebase';
+import { loginUser } from '@/lib/firebase';
 import { useRouter } from 'next/navigation';
 import Input from '@mui/joy/Input';
 import Button from '@mui/joy/Button';
@@ -31,14 +31,14 @@ export default function SignInPage() {
         }
     };
 
-    const handleGoogleSignOn = async () => {
-        try {
-            await googleAuth();
-            router.push('/swiftville');
-        } catch (error) {
-            console.error('Failed to sign in:', error);
-        }
-    };
+    // const handleGoogleSignOn = async () => {
+    //     try {
+    //         await googleAuth();
+    //         router.push('/swiftville');
+    //     } catch (error) {
+    //         console.error('Failed to sign in:', error);
+    //     }
+    // };
 
     return (
         <Box component="section" color="primary" sx={{ p: 2, display: 'flex', flexDirection: 'column', gap: 3, justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100vw', bgcolor: 'primary.050' }}>
