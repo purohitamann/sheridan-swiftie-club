@@ -27,7 +27,7 @@ type User = {
     studentId: string;
 };
 
-export default function Submission({ eventName, open }: SubmissionProps, user: User) {
+export default function Submission({ eventName, open, user }: SubmissionProps) {
     return (
         <div>
             <AlertDialog open={open}>
@@ -35,13 +35,15 @@ export default function Submission({ eventName, open }: SubmissionProps, user: U
                     <AlertDialogHeader>
                         <AlertDialogTitle className={`${kaushan.className}`}>Welcome to our secret garden!!!</AlertDialogTitle>
                         <AlertDialogDescription className={`text-center text-pink-400 ${cinzel.className}`}>
+                            <br />
                             <div className='text-center text-[#0060FF]'>
-                                <p>{user.fullName}, We&apos;ve received your RSVP</p>
-                                <br />
-                                <p>{user.emailAddress}</p>
-                                <br />
-                                <p>{user.registrationId}</p>
+                                <p className='lowercase'><strong className='font-mono'>{user.fullName}</strong>, We&apos;ve received your RSVP</p>
+
+                                <p><i className='font-mono'> Email:</i> {user.emailAddress}</p>
+
+                                <p><i className='font-mono'> Registration ID:</i> {user.registrationId}</p>
                             </div>
+                            <br />
                             <p>We can&apos;t wait to see you at {eventName}!<br />
                                 Please check your inbox in the coming days for more details.<br />
                                 Shimmerrrr!!!
