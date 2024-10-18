@@ -17,6 +17,7 @@ const cinzel = Cinzel({ subsets: ['latin'], weight: '400' });
 type SubmissionProps = {
     eventName: string;
     open: boolean;
+    user: User;
 };
 
 type User = {
