@@ -1,5 +1,5 @@
-import React from 'react'
-import Banner from '../components/Banner'
+import React from 'react';
+import Banner from '../components/Banner';
 const Article = () => {
     return (
         <section className="flex flex-col justify-center items-center p-10 w-full h-full" >
@@ -9,7 +9,7 @@ const Article = () => {
                 </div>
             </Banner>
         </section>
-    )
-}
+    );
+};
 
-export default Article
+export default Article;

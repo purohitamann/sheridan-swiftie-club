@@ -1,8 +1,8 @@
-import React from 'react'
-import Image from 'next/image'
-import { Cinzel } from 'next/font/google'
-import SwiftvilleButton from '../SwiftvilleButton'
-const cinzel = Cinzel({ subsets: ['latin'], weight: '400' })
+import React from 'react';
+import Image from 'next/image';
+import { Cinzel } from 'next/font/google';
+import SwiftvilleButton from '../SwiftvilleButton';
+const cinzel = Cinzel({ subsets: ['latin'], weight: '400' });
 type Event = {
     title: string
     description: string
@@ -28,9 +28,10 @@ export default function index(event: Event) {
                 <p className="font-thin">{event.location}</p>
                 <SwiftvilleButton string='RSVP' link={event.link} />
                 <p className="font-thin lowercase font-mono  italic animate-blink ">{event.type}</p>
+                <br />
             </div>
 
         </div>
-    )
+    );
 }
 

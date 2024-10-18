@@ -1,12 +1,12 @@
-'use client'
+'use client';
 
-import Navbar from '@/components/Navbar'
-import React, { useEffect, useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import Footer from '@/components/Footer'
-import fundData from '@/data/evermorefund.json'
-import Prompt from '@/components/Prompt'
+import Navbar from '@/components/Navbar';
+import React, { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Footer from '@/components/Footer';
+import fundData from '@/data/evermorefund.json';
+import Prompt from '@/components/Prompt';
 
 
 interface ImageData {
@@ -60,7 +60,7 @@ interface EvermoreFundData {
 }
 
 export default function EvermoreFund() {
-    const [data, setData] = useState<EvermoreFundData | null>(fundData);
+    const data: EvermoreFundData = fundData;
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => setIsModalOpen(true);
@@ -156,5 +156,5 @@ export default function EvermoreFund() {
                 <Footer />
             </div>
         </div >
-    )
+    );
 }

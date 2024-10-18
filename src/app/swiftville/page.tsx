@@ -1,12 +1,13 @@
-import React from 'react'
-import { Kaushan_Script, Cinzel } from 'next/font/google'
-import Backdrop from '@/components/Backdrop' // Import Backdrop component
+import React from 'react';
+import { Kaushan_Script, Cinzel } from 'next/font/google';
+import Backdrop from '@/components/Backdrop'; // Import Backdrop component
 
-import eventData from '@/data/events.json'
-import EventCard from '@/components/EventCard'
-import Footer from '@/components/Footer'
-const kaushan = Kaushan_Script({ subsets: ['latin'], weight: '400' })
-const alfa = Cinzel({ subsets: ['latin'], weight: '400' })
+import eventData from '@/data/events.json';
+import EventCard from '@/components/EventCard';
+import Footer from '@/components/Footer';
+
+const kaushan = Kaushan_Script({ subsets: ['latin'], weight: '400' });
+const alfa = Cinzel({ subsets: ['latin'], weight: '400' });
 type Event = {
     title: string
     description: string
@@ -41,6 +42,7 @@ const Page: React.FC = () => {
                     </h2>
                     <br />
 
+
                 </div>
             </Backdrop>
             <div className='flex flex-col justify-center items-center w-full z-40   bg-[#F1EBDB] '>
@@ -63,7 +65,7 @@ const Page: React.FC = () => {
             </div>
 
         </div>
-    )
-}
+    );
+};
 
 export default Page;

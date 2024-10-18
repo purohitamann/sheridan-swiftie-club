@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Banner from '../../components/Banner';
 import Profile from '../../components/Profile';
 import Footer from '../../components/Footer';
-import Link from 'next/link';
+
 import TypewriterEffect from '@/components/TypeWriterEffect/TypeWriterEffect';
 import Navbar from '@/components/Navbar';
 import executivesData from '@/data/executives.json';

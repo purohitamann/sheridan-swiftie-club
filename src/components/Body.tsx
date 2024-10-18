@@ -3,11 +3,12 @@ import LinkComponent from '../components/LinkComponent/LinkComponent';
 
 import Footer from '../components/Footer';
 import Executives from '../components/Executives';
-import Link from 'next/link';
+
 import TypewriterEffect from './TypeWriterEffect/TypeWriterEffect';
 import Banner from './Banner';
 import Prompt from './Prompt';
 import SwiftvilleButton from './SwiftvilleButton';
+import Navbar from './Navbar';
 const Body: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -17,12 +18,16 @@ const Body: React.FC = () => {
     return (
         <section className="flex flex-col justify-start items-center p-4 sm:p-10 w-[100vw] min-h-[100vh]">
             {/* Navigation Links */}
-            <section className='flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 text-[#E4E2DD] mb-6'>
+            {/* <section className='flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 text-[#E4E2DD] mb-6'>
                 <Link href="/" className='hover:text-white hover:font-bold text-sm sm:text-base'>Home</Link>
                 <Link href="/evermorefund" className='hover:text-white hover:font-bold text-sm sm:text-base'>Donate</Link>
                 <Link href="https://forms.gle/Fc63swf8ZpRHEG9r9" className='hover:text-white hover:font-bold text-sm sm:text-base'>Join The Team</Link>
                 <Link href="https://sheridancollege.campuslabs.ca/engage/organization/sheridanswiftieclub/events" className='hover:text-white hover:font-bold text-sm sm:text-base'>Events</Link>
-            </section>
+            </section> */}
+            <div className="flex justify-center items-center text-[#E4E2DD] hover:text-white">
+                <Navbar />
+            </div>
+
             <div className='animate-jitter'>
                 <SwiftvilleButton string="Enter Swiftville" link="/swiftville" />
 

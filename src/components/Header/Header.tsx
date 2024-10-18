@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import Confetti from 'react-confetti';
 import './Header.css';
 const Header: React.FC = () => {
-    const audioRef = useRef<HTMLAudioElement | null>(null);
+
     const customColors = ['#000000', '#FFFFFF', '#808080', '#E4E2DD'];
-    const [isConfettiVisible, setConfettiVisible] = useState(false);
+    const isConfettiVisible = false;
 
     // const playAudio = () => {
     //     if (audioRef.current && !hasPlayedAudio) {
@@ -36,9 +36,9 @@ const Header: React.FC = () => {
         <header className=" flex flex-col justify-center items-center h-[100vh] text-center p-20 ">
 
 
-            <p style={{ fontFamily: "Cinzel" }} className="text-sm font-light text-[#e4e2ddc6] p-3">Est Oct&#39;23</p>
+            <p style={{ fontFamily: 'Cinzel' }} className="text-sm font-light text-[#e4e2ddc6] p-3">Est Oct&#39;23</p>
             <h1
-                style={{ fontFamily: "Cinzel", color: "#E4E2DD" }}
+                style={{ fontFamily: 'Cinzel', color: '#E4E2DD' }}
                 className="text-6xl sm:text-xl md:text-xl font-light"
                 onMouseEnter={playAudio}
                 onClick={playAudio}
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
             >
                 Sheridan Swiftie Club
             </h1>
-            <p style={{ fontFamily: "Cinzel" }} className="text-sm font-light text-[#e4e2ddc6] p-3">Sheridan College, Trafalgar</p>
+            <p style={{ fontFamily: 'Cinzel' }} className="text-sm font-light text-[#e4e2ddc6] p-3">Sheridan College, Trafalgar</p>
             {isConfettiVisible && (
                 <Confetti
                     width={window.innerWidth}
