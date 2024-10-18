@@ -34,6 +34,7 @@
     ".next/types/**/*.ts"
   ],
   "exclude": [
+    "./src/components/ui/label.tsx",
     "node_modules",
     "**/node_modules*/*",
     "**/fastq*/test/**/*", // Exclude problematic fastq test files
