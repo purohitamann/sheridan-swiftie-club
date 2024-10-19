@@ -111,7 +111,7 @@ export default function RSVPForm(formProps: Props) {
             }
 
             // Save the registration to Firestore
-            await addDoc(collection(firestore, 'paint-night-rsvps'), values);
+            await addDoc(collection(firestore, `${formTitle.toLowerCase().replace(' ', '-')}-rsvps`), values);
 
             setModal(true);
         } catch (error) {
@@ -125,7 +125,7 @@ export default function RSVPForm(formProps: Props) {
             <div><p className="text-lg text-[#0060FF]">Hello, <strong>{user.fullName || 'there'}!</strong></p></div>
             <div className="flex flex-row align-middle justify-between text-center">
                 <div>
-                    <Button onClick={() => { window.location.href = '/sign-in'; }} className="hover:text-bordered hover:font-bold text-base">Join our Newsletter</Button>
+                    <Button onClick={() => { window.location.href = '/swiftville'; }} className="hover:text-bordered hover:font-bold text-base">Join our Newsletter</Button>
                 </div>
             </div>
             <h1>{formTitle}</h1>
@@ -230,7 +230,7 @@ export default function RSVPForm(formProps: Props) {
                         )}
                     />
                     <FormField control={form.control} name="date" render={() => <div></div>} />
-                    <FormField control={form.control} name="registrationId" render={() => <div>{registrationId}</div>} />
+                    <FormField control={form.control} name="registrationId" render={() => <div></div>} />
                     <Button type="submit" className="w-full">Submit</Button>
                     <Submission eventName={formProps.formTitle} open={modal} user={user} />
                 </form>
