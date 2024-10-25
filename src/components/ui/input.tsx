@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+/* eslint-disable */
 import { cn } from '@/lib/utils';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type

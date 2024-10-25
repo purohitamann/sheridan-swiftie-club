@@ -121,16 +121,16 @@ export default function RSVPForm(formProps: Props) {
     }
 
     return (
-        <div className={`flex flex-col justify-center align-center items-center p-20 font-mono ${formProps.className}`}>
+        <div className={`flex flex-col space-y-2 justify-center align-center items-center p-20 font-mono ${formProps.className}`}>
             <div><p className="text-lg text-[#0060FF]">Hello, <strong>{user.fullName || 'there'}!</strong></p></div>
             <div className="flex flex-row align-middle justify-between text-center">
                 <div>
-                    <Button onClick={() => { window.location.href = '/swiftville'; }} className="hover:text-bordered hover:font-bold text-base">Join our Newsletter</Button>
+                    <Button onClick={() => { window.location.href = '/swiftville'; }} className="hover:text-bordered hover:font-bold text-base">Go to Swiftville</Button>
                 </div>
             </div>
             <h1>{formTitle}</h1>
             <p>{formDescription}</p>
-            <h2>{currentEventId}</h2>
+            {/* <h2>{currentEventId}</h2> */}
 
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
