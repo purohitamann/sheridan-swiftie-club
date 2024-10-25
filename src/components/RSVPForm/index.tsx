@@ -125,7 +125,7 @@ export default function RSVPForm(formProps: Props) {
             <div><p className="text-lg text-[#0060FF]">Hello, <strong>{user.fullName || 'there'}!</strong></p></div>
             <div className="flex flex-row align-middle justify-between text-center">
                 <div>
-                    <Button onClick={() => { window.location.href = '/swiftville'; }} className="hover:text-bordered hover:font-bold text-base">Join our Newsletter</Button>
+                    <Button onClick={() => { window.location.href = '/swiftville'; }} className="hover:text-bordered hover:font-bold text-base">Go to Swiftville</Button>
                 </div>
             </div>
             <h1>{formTitle}</h1>
