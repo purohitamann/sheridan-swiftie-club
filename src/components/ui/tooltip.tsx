@@ -1,5 +1,6 @@
-"use client"
 /* eslint-disable */
+"use client"
+
 import * as React from "react"
 import * as TooltipPrimitive from "@radix-ui/react-tooltip"
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
