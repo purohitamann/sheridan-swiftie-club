@@ -1,5 +1,5 @@
 'use client';
-
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 import * as React from 'react';
 import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
 import { CheckIcon } from '@radix-ui/react-icons';

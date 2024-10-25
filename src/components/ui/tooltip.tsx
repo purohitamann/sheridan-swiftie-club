@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as TooltipPrimitive from "@radix-ui/react-tooltip"
-
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 import { cn } from "@/lib/utils"
 
 const TooltipProvider = TooltipPrimitive.Provider

@@ -121,7 +121,7 @@ export default function RSVPForm(formProps: Props) {
     }
 
     return (
-        <div className={`flex flex-col space-y-5 justify-center align-center items-center p-20 font-mono ${formProps.className}`}>
+        <div className={`flex flex-col space-y-2 justify-center align-center items-center p-20 font-mono ${formProps.className}`}>
             <div><p className="text-lg text-[#0060FF]">Hello, <strong>{user.fullName || 'there'}!</strong></p></div>
             <div className="flex flex-row align-middle justify-between text-center">
                 <div>

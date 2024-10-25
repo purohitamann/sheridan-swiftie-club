@@ -20,7 +20,7 @@ type Event = {
 }
 const Page: React.FC = () => {
     return (
-        <div>
+        <div className='min-h-screen w-full flex flex-col justify-center items-center bg-[#F1EBDB] relative overflow-hidden'>
 
 
             <Backdrop>
