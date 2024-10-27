@@ -65,6 +65,7 @@ export const createUser = async (email: string, password: string) => {
     throw error;
   }
 };
+
 export const signUp = async (email: string, password: string) => {
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
