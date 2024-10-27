@@ -111,7 +111,7 @@ export default function RSVPForm(formProps: Props) {
             }
 
             // Save the registration to Firestore
-            await addDoc(collection(firestore, `${formTitle.toLowerCase().replace(' ', '-')}-rsvps`), values);
+            await addDoc(collection(firestore, `${formTitle.toLowerCase().trim().replace(' ', '-')}-rsvps`), values);
 
             setModal(true);
         } catch (error) {

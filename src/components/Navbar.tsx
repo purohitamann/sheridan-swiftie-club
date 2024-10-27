@@ -2,23 +2,21 @@ import React from 'react';
 import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
-// import {
-//     Tooltip,
-//     TooltipContent,
-//     TooltipProvider,
-//     TooltipTrigger,
-// } from "@/components/ui/tooltip"
+import { Sheet, SheetContent, SheetClose, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Cinzel } from 'next/font/google';
+const cinzel = Cinzel({ subsets: ['latin'], weight: '400' });
+
+import NewsletterSignup from './NewsletterSignup';
 export default function Navbar() {
+
+
     return (
-        <div className="flex flex-col  space-x-2 sm:flex-row align-center text-center justify-center items-center p-10 w-full h-full ">
+        <div className={`${cinzel.className} flex flex-col  space-x-2 sm:flex-row align-center text-center justify-center items-center p-10 w-full h-full `}>
             <Link href="/" prefetch={false} className="hover:text-bordered hover:font-bold text-base p-1">Home</Link>
             <Link href="/evermorefund" prefetch={false} className="hover:text-bordered hover:font-bold text-base p-1">Donate</Link>
             <Link href="https://forms.gle/Fc63swf8ZpRHEG9r9" prefetch={false} className="hover:text-bordered hover:font-bold text-base p-1">Join The Team</Link>
             <Link href="https://sheridancollege.campuslabs.ca/engage/organization/sheridanswiftieclub/events" prefetch={false} className="hover:text-bordered hover:font-bold text-base p-1">Events</Link>
 
-
-            {/* href="/sign-in" */}
-            <Button variant="link" className="disabled hover:text-bordered hover:font-bold text-base p1">Newsletter</Button>
 
             {/* <TooltipProvider>
                 <Tooltip>
@@ -29,40 +27,30 @@ export default function Navbar() {
                 </Tooltip>
             </TooltipProvider> */}
 
-            {/* <Sheet>
+            <Sheet  >
                 <SheetTrigger asChild>
-                    <Button variant="outline" className="disable hover:text-bordered hover:font-bold text-base p1">Open</Button>
+                    <Button variant="link" className="disable hover:text-bordered hover:font-bold text-base text-inherit">Newsletter</Button>
                 </SheetTrigger>
-                <SheetContent>
+                <SheetContent className={`${cinzel.className} bg-[#E4E2DD] `}>
                     <SheetHeader>
-                        <SheetTitle>Edit profile</SheetTitle>
+                        <SheetTitle>Signup for our newsletter</SheetTitle>
                         <SheetDescription>
-                            Make changes to your profile here. Click save when you're done.
+                            <p>Subscribe to our newsletter to stay up to date with what we&apos;re doing</p> <br />
                         </SheetDescription>
-                    </SheetHeader>
-                    <div className="grid gap-4 py-4">
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="name" className="text-right">
-                                Name
-                            </Label>
-                            <Input id="name" value="Pedro Duarte" className="col-span-3" />
-                        </div>
-                        <div className="grid grid-cols-4 items-center gap-4">
-                            <Label htmlFor="username" className="text-right">
-                                Username
-                            </Label>
-                            <Input id="username" value="@peduarte" className="col-span-3" />
-                        </div>
+                    </SheetHeader >
+                    <div className="lowercase">
+                        <NewsletterSignup />
                     </div>
                     <SheetFooter>
                         <SheetClose asChild>
-                            <Button type="submit">Save changes</Button>
+                            <Button type="submit" className="w-full mt-5" variant="outline">Close</Button>
+
                         </SheetClose>
                     </SheetFooter>
                 </SheetContent>
             </Sheet>
 
- */}
+
 
             {/* <SignedOut>
                 <SignInButton />
