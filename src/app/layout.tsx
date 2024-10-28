@@ -22,7 +22,7 @@ export default function RootLayout({
 
   return (
 
-    <html lang="en" style={{ fontFamily: 'Cinzel' }}>
+    <html lang="en" style={{ fontFamily: 'Cinzel' }} className={`${cinzel.className} overflow-y-hidden`}>
 
 
       <body className={`${inter.className} ${cinzel.className} `} style={{ fontFamily: 'Cinzel' }} >
