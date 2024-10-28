@@ -4,7 +4,7 @@ import Backdrop from '@/components/Backdrop'; // Import Backdrop component
 
 import eventData from '@/data/events.json';
 import EventCard from '@/components/EventCard';
-
+import Image from 'next/image';
 
 const kaushan = Kaushan_Script({ subsets: ['latin'], weight: '400' });
 const alfa = Cinzel({ subsets: ['latin'], weight: '400' });
@@ -60,7 +60,7 @@ const Page: React.FC = () => {
 
             </div>
 
-
+            <Image src="/assets/toronto.png" alt='toronto' className='w-2/5 fixed -bottom-5 sm:-bottom-30   opacity-75 right-3/4 z-0' width={600} height={100} />
 
         </div>
     );
