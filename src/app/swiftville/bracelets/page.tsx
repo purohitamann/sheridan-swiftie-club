@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export default function page() {
     return (
-        <div className='min-h-screen w-full flex flex-col justify-center items-center bg-slate-[#E0DED4] relative overflow-hidden'>
+        <div className='min-h-screen w-full flex flex-col justify-center items-center bg-[#E0DED4] relative overflow-hidden'>
             <Navbar />
             <div className='flex flex-col justify-center items-center'>
                 <Image src="/assets/fb/fb-ssu.png" alt='friendship-bracelets' className='w-4/5' width={600} height={300} />
