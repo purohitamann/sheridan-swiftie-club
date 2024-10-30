@@ -45,7 +45,7 @@ Calling all Swifties! Get ready to experience the magic of Taylor Swift’s Eras
 
                     `}
           currentEventId={103}
-          currentEventCampus="HMC Campus"
+          currentEventCampus="Trafalgar Campus"
         />
       </div>
     </div>
