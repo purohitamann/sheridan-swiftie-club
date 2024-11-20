@@ -1,5 +1,6 @@
 import * as React from "react"
 /* eslint-disable */
+// eslint @typescript-eslint/no-empty-object-type: "off"
 import { cn } from "@/lib/utils"
 
 const Textarea = React.forwardRef<

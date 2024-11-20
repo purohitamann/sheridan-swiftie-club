@@ -1,5 +1,6 @@
 "use client"
 /* eslint-disable */
+// eslint @typescript-eslint/no-empty-object-type: "off"
 import * as React from "react"
 import * as SelectPrimitive from "@radix-ui/react-select"
 import { cn } from "@/lib/utils"
