@@ -14,12 +14,18 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import Footer from '@/components/Footer';
-
 import Navbar from '@/components/Navbar';
 import Submission from './submission'; // Import Submission component
 import { z } from 'zod';
 import { addDoc, collection } from 'firebase/firestore';
 import { firestore, storage } from '@/lib/firebase';
+
+// Define the type for submissionData
+interface SubmissionData {
+    fullName: string;
+    emailAddress: string;
+    position: string;
+}
 
 // Define Zod schema for validation
 const formSchema = z.object({
@@ -35,7 +41,7 @@ export default function Page() {
 
     const [selectedPosition, setSelectedPosition] = useState('');
     const [errors, setErrors] = useState<Record<string, string>>({});
-    const [submissionData, setSubmissionData] = useState(null);
+    const [submissionData, setSubmissionData] = useState<SubmissionData | null>(null);
     const [dialogOpen, setDialogOpen] = useState(false);
 
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -81,12 +87,12 @@ export default function Page() {
         }
 
         // Add resume URL to the submission data
-        const submissionData = { ...data, resume: resumeURL };
+        const submissionPayload = { ...data, resume: resumeURL };
 
         // Save form data to Firestore
         try {
-            await addDoc(collection(firestore, 'submissions'), submissionData);
-            setSubmissionData({ fullName: data.name, emailAddress: data.email, position: selectedPosition });
+            await addDoc(collection(firestore, 'submissions'), submissionPayload);
+            setSubmissionData({ fullName: data.name as string, emailAddress: data.email as string, position: selectedPosition });
             setDialogOpen(true);
         } catch (error) {
             console.error('Error submitting form:', error);
@@ -95,19 +101,16 @@ export default function Page() {
 
         setErrors({});
     }
+
     return (
         <div className='w-full flex flex-col justify-center items-center bg-[#1e1e1e] relative text-[#E4E2DD]'>
             <div className='w-full h-full flex flex-col justify-center items-center '>
-
-
                 <div className="flex flex-col w-full pb-20 justify-center text-[#E4E2DD] items-center text-sm sm:text-lg rounded-md text-center">
                     <div className="w-full pt-20 sm:pt-40">
                         <Navbar />
                     </div>
-
                     <p className="text-center px-4">Join the Sheridan Swiftie Club Executive Team</p>
                     <p className="text-center px-4">Fill out the form below to apply for a position on the executive team.</p>
-
                     <div className="w-full max-w-lg px-4">
                         <p>We&apos;re currently looking for:</p>
                         <br />
@@ -117,36 +120,26 @@ export default function Page() {
                                     <p className='font-bold'>Description: </p>
                                     <p className='font-thin normal text-sm'>Creating and managing social media content for the club, including posts on social media platforms such as Instagram. Mandatory attendance for all events.</p>
                                 </li>
-
                                 <li className='flex flex-col  border-x-4 border-pink-500 bg-[#cac9c7] text-[#1e1e1e] p-8 rounded'>
                                     <p className='font-bold uppercase'>Events Coordinator (1)</p>
                                     <p className='font-bold'>Description: </p>
                                     <p className='font-thin normal text-sm'>Planning and executing events for the club, including hosting meetups, pop-ups and social gatherings. Mandatory attendance for all events.</p>
                                 </li>
-
                                 <li className='flex flex-col  border-x-4 border-blue-500 bg-[#cac9c7] text-[#1e1e1e] p-8 rounded'>
                                     <p className='font-bold uppercase'>Site Contributor - Full Stack (3)</p>
                                     <p className='font-bold'>Description: </p>
                                     <p className='font-thin normal text-sm'>work with other site contributors to design and implement new features for the website. basic React, Firebase and Tailwind knowledge is required.</p>
                                 </li>
-
-
                                 <li className='flex flex-col  border-x-4 border-pink-500 bg-[#cac9c7] text-[#1e1e1e] p-8 rounded'>
                                     <p className='font-bold uppercase'>Site Contributor - UI/UX (1)</p>
                                     <p className='font-bold'>Description: </p>
                                     <p className='font-thin normal text-sm'>Work with other site contributors to design and implement new features for the website.</p>
                                 </li>
-
                                 <li className='flex flex-col  border-x-4 border-blue-500 bg-[#cac9c7] text-[#1e1e1e] p-8 rounded'>
                                     <p className='font-bold uppercase'>Site Contributor - Creative Writing (1)</p>
                                     <p className='font-bold'>Description: </p>
                                     <p className='font-thin normal text-sm'>Planning content for the website, including blog posts, social media posts, and other content. Work with Social Media Coordinator to create content.</p>
                                 </li>
-
-
-
-
-
                             </ol>
                         </div>
                         <div className="space-y-4 mt-4">
@@ -225,12 +218,10 @@ export default function Page() {
                         </div>
                     </div>
                 </div>
-
-
                 {submissionData && (
                     <Submission
                         open={dialogOpen}
-                        user={{ fullName: submissionData.fullName, emailAddress: submissionData.email }}
+                        user={{ fullName: submissionData.fullName, emailAddress: submissionData.emailAddress }}
                         position={submissionData.position}
                     />
                 )}
