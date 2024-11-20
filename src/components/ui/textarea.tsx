@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import * as React from "react"
 /* eslint-disable */
 // eslint @typescript-eslint/no-empty-object-type: "off"
