@@ -14,7 +14,7 @@ export default function Navbar() {
         <div className={`${cinzel.className} flex flex-col  space-x-2 sm:flex-row align-center text-center justify-center items-center p-10 w-full h-full `}>
             <Link href="/" prefetch={false} className="hover:text-bordered hover:font-bold text-base p-1">Home</Link>
             <Link href="/evermorefund" prefetch={false} className="hover:text-bordered hover:font-bold text-base p-1">Donate</Link>
-            <Link href="https://forms.gle/Fc63swf8ZpRHEG9r9" prefetch={false} className="hover:text-bordered hover:font-bold text-base p-1">Join The Team</Link>
+            <Link href="/join" prefetch={false} className="hover:text-bordered hover:font-bold text-base p-1">Join The Team</Link>
             <Link href="https://sheridancollege.campuslabs.ca/engage/organization/sheridanswiftieclub/events" prefetch={false} className="hover:text-bordered hover:font-bold text-base p-1">Events</Link>
 
 

@@ -7,6 +7,7 @@ import Footer from '../../components/Footer';
 import TypewriterEffect from '@/components/TypeWriterEffect/TypeWriterEffect';
 import Navbar from '@/components/Navbar';
 import executivesData from '@/data/executives.json';
+import SwiftvilleButton from '@/components/SwiftvilleButton';
 
 function Exec() {
     const [mounted, setMounted] = useState(false);
@@ -24,7 +25,9 @@ function Exec() {
             {mounted && (
                 <div className="flex flex-col justify-center items-center  p-6 sm:p-10 min-w-full min-h-[100vh] " style={{ fontFamily: 'Cinzel' }}>
                     {/* Navigation Links */}
-                    <Navbar />
+                    <div className="w-full px-4 sm:px-10 text-[#E4E2DD]">
+                        <Navbar />
+                    </div>
 
                     {/* Banner Section */}
                     <div className="w-full px-4 sm:px-10">
@@ -53,9 +56,14 @@ function Exec() {
                             />
                         ))}
                     </div>
+                    <section>
+                        <div className="flex w-full justify-center m-10 p-10 text-[#E4E2DD]">
 
+                            <SwiftvilleButton string='Wanna be an executive?' link='/join' />
+                        </div>
+                    </section>
                     {/* Footer */}
-                    <div className="flex justify-center m-0 p-0">
+                    <div className="flex justify-center m-0 p-0 ">
                         <Footer />
                     </div>
                 </div>
