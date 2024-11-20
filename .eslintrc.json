@@ -24,14 +24,25 @@
   ],
   "rules": {
     "semi": ["error", "always"],
-    "quotes": ["error", "single"],
+    "quotes": ["error", "single"], // or "double" if you prefer double quotes
     "no-unused-vars": "warn",
     "react/prop-types": "off",
-    "@typescript-eslint/no-unused-vars": "warn"
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/no-empty-interface": "off"
   },
   "settings": {
     "react": {
       "version": "detect"
     }
+  },
+  "overrides": [
+  {
+    "files": ["*.ts", "*.tsx"],
+    "rules": {
+      "quotes": ["error", "single"],
+      "semi": ["error", "always"]
+    }
   }
+]
+
 }

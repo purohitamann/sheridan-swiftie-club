@@ -3,7 +3,7 @@ import { initializeApp } from 'firebase/app';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 // import {  collection, getDocs, updateDoc } from 'firebase/firestore';
-
+import { getStorage } from 'firebase/storage';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 const provider = new GoogleAuthProvider();
@@ -30,7 +30,7 @@ export const auth = getAuth(app);
 auth.languageCode = 'it';
 auth.useDeviceLanguage();
 export const firestore = getFirestore(app);
-
+export const storage = getStorage(app);
 export function googleAuth() { signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
