@@ -55,8 +55,8 @@ export default function Page() {
             // Handle validation errors
             const errorMap = result.error.flatten().fieldErrors;
             const formattedErrors = Object.keys(errorMap).reduce((acc, key) => {
-                if (errorMap[key]) {
-                    acc[key] = errorMap[key]![0];
+                if ((errorMap as Record<string, string[]>)[key]) {
+                    acc[key] = (errorMap as Record<string, string[]>)[key][0];
                 }
                 return acc;
             }, {} as Record<string, string>);
