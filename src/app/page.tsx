@@ -7,12 +7,12 @@ import Body from '@/components/Body';
 import ThemeWrapper from '@/components/ThemeWrapper/ThemeWrapper';
 
 const Home: React.FC = () => {
-  useEffect(() => {
+  // useEffect(() => {
 
-    const audio = new Audio('/so-high-school-intro.mp3');
-    audio.volume = 0.5;
-    audio.play();
-  }, []);
+  //   const audio = new Audio('/so-high-school-intro.mp3');
+  //   audio.volume = 0.5;
+  //   audio.play();
+  // }, []);
 
   return (
     <main className="flex flex-col min-h-screen">
