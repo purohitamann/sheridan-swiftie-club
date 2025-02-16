@@ -27,9 +27,9 @@ export default function RootLayout({
 
       <body className={`${inter.className} ${cinzel.className} `} style={{ fontFamily: 'Cinzel' }} >
         <div>
-          <div className="bg-gradient-to-r from-blue-400 to-blue-500 p-4 text-white text-center">
+          {/* <div className="bg-gradient-to-r from-blue-400 to-blue-500 p-4 text-white text-center">
             <p>A New Look is in the works! We never go OUT OF STYLE March 01, 2025</p>
-          </div>
+          </div> */}
           {children}</div>
 
 
