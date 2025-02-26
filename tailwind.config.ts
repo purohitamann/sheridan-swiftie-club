@@ -16,6 +16,8 @@ const config: Config = {
 			serif: ['Cinzel', 'serif'], // For Cinzel's style
 			mono: ['Menlo', 'monospace'], // For Monospace's style
 			heading: ['Montserrat', 'sans-serif'], // For Heading's style
+			handwriting: ['Caveat', 'cursive'], // For handwritten style
+			marker: ['Permanent Marker', 'cursive'], // For marker/sharpie style
 		  },
 		keyframes: {
 			jitter: {
@@ -33,12 +35,17 @@ const config: Config = {
 			comic: {
 			  '0%, 100%': { transform: 'scale(1.01)' },
 			  '50%': { transform: 'scale(1.03)' }
+			},
+			float: {
+			  '0%, 100%': { transform: 'translateY(0)' },
+			  '50%': { transform: 'translateY(-10px)' }
 			}
 		  },
 		  animation: {
 			jitter: 'jitter 0.3s infinite',
 			comic: 'comic 1s ease-in-out infinite',
 			blink: 'blink  1s step-start infinite',
+			float: 'float 3s ease-in-out infinite',
 		  },
   		backgroundImage: {
   			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

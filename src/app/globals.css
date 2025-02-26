@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Permanent+Marker&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -109,4 +110,25 @@ html {
   background-position: bottom;
   width: 70vw;
   height: 50vh;
+}
+
+/* Polaroid styles */
+.polaroid {
+  background: white;
+  padding: 1rem;
+  padding-bottom: 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  transform: rotate(0deg);
+  transition: all 0.2s ease;
+}
+
+.polaroid:hover {
+  transform: scale(1.02) rotate(1deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.polaroid-caption {
+  font-family: 'Caveat', cursive;
+  margin-top: 0.5rem;
+  text-align: center;
 }
