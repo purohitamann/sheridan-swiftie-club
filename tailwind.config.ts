@@ -12,6 +12,10 @@ const config: Config = {
 		fontFamily: {
 			sans: ['Inter', 'sans-serif'], // For Notion's style
 			slack: ['Lato', 'sans-serif'], // For Slack's style
+			futura: ['Futura', 'sans-serif'], // For Futura's style
+			serif: ['Cinzel', 'serif'], // For Cinzel's style
+			mono: ['Menlo', 'monospace'], // For Monospace's style
+			heading: ['Montserrat', 'sans-serif'], // For Heading's style
 		  },
 		keyframes: {
 			jitter: {

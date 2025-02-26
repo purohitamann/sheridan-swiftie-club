@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
-
+import ClubLogo from '@/components/NewLook/ClubLogo';
+import Image from 'next/image';
 const Home: React.FC = () => {
   useEffect(() => {
     const audio = new Audio('/so-high-school-intro.mp3');
@@ -10,34 +11,40 @@ const Home: React.FC = () => {
 
   return (
     <main className="flex flex-col min-h-screen bg-white font-slack font-bold">
-      <header className="flex flex-col justify-center items-center h-[100vh] text-center p-20">
-        <p className="text-sm font-light text-[#36C5F0] p-3">Est Oct&#39;23</p>
-
+      <div className="flex flex-col justify-center items-center text-center p-20 ">
+     
         <ClubLogo />
-        <p className="text-sm  text-[#ECB22E] p-3  ">Sheridan College, Trafalgar</p>
-        
-      </header>
+        <Image src="/new-look/hero.jpg" className='sm:w-2/3 w-full h-auto' alt="Taylor Swift" width={400} height={400} />
+        <div>
+            <div className='flex flex-col items-center uppercase  font-sm' >
+            <h1 className='font-futura'>Glad you're here.</h1>
+            <h1 className='font-futura '>We hope you stay around for a long time.</h1>
+
+
+            </div>   
+      </div>
+          
+          <div className='flex flex-col items-center pt-10'>  
+
+            <ul className='flex justify-center space-x-4 font-sans font-bold text-sm  uppercase '>
+                <li className='text-[#2a93b3]'>About</li>
+                <li className='text-[#289c6c]'>Home</li>
+                <li className='text-[#ECB22E]'>Executives</li>
+                <li className='text-[#c52f2f]'>Events</li>
+                {/* <li>Gallery</li> */}
+            </ul>
+          </div>
+      </div>
+  
+
+
+
 
       {/* <Body /> */}
     </main>
   );
 };
-const ClubLogo = () => {
- 
-    
-        return (
-          <div className="relative flex items-center justify-center  p-5 sm:h-20 h-16
-              bg-[#2EB67D] rounded-lg shadow-lg border-4 border-white">
-            
-            {/* Club Name with ST Superscript */}
-            <span className="text-white font-bold font-sans sm:text-2xl text-lg uppercase tracking-widest">
-              Sheridan Swiftie Club <span className="align-super sm:text-lg text-xs">ST</span>
-            </span>
-          </div>
-        );
-  };
-  
-  
+
+
   
 export default Home;
-
