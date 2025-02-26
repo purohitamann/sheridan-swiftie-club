@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		fontFamily: {
+			sans: ['Inter', 'sans-serif'], // For Notion's style
+			slack: ['Lato', 'sans-serif'], // For Slack's style
+		  },
 		keyframes: {
 			jitter: {
 				'0%': { transform: 'translate(0, 0)' },
