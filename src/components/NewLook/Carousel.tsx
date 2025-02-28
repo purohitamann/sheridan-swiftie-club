@@ -6,23 +6,23 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const posts = [
   {
-    title: "🎤 Swiftie Karaoke Night – March 15th!",
-    description: "Join us for a night of singing your favorite Taylor Swift songs!",
-    date: "March 15, 2024",
+    title: "Annual Election – March 03th!",
+    description: "Vote for your favorite executives and make your voice heard!",
+    date: "March 3, 2024",
     image: "https://via.placeholder.com/600x300?text=Karaoke+Night",
   },
   {
-    title: "💃 Swiftie Dance Party Recap!",
-    description: "Check out the highlights from our amazing dance party!",
-    date: "March 5, 2024",
+    title: "More Events Coming Soon!",
+    description: "Stay tuned for more exciting events and activities!",
+    date: "tentative",
     image: "https://via.placeholder.com/600x300?text=Dance+Party",
   },
-  {
-    title: "🎶 Album Listening Session – Join Us!",
-    description: "Experience Taylor's iconic albums with fellow fans.",
-    date: "March 20, 2024",
-    image: "https://via.placeholder.com/600x300?text=Listening+Session",
-  },
+  // {
+  //   title: "🎶 Album Listening Session – Join Us!",
+  //   description: "Experience Taylor's iconic albums with fellow fans.",
+  //   date: "March 20, 2024",
+  //   image: "https://via.placeholder.com/600x300?text=Listening+Session",
+  // },
 ];
 
 const Carousel = () => {

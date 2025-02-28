@@ -18,13 +18,13 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white font-slack font-bold items-center p-5 sm:p-10">
-      <div className="flex flex-col justify-center items-center text-center pt-20 ">
+      <div className="flex flex-col justify-center items-center text-center pt-1 ">
         <ClubLogo />
       </div>
       <div className='flex justify-center items-center w-full h-auto'>
         <Image src="/new-look/hero.jpg" className='sm:w-2/3 w-full h-auto' alt="Taylor Swift" width={400} height={400} />
       </div>
-      <div className='p-4' >
+      <div className='p-1' >
         <div className='flex flex-col items-center uppercase font-xs' >
           <h1 className='font-futura font-extrabold'>Hush, we're not the regulars</h1>
           <h1 className='font-futura font-extrabold'>We're Shining just for you!</h1>
