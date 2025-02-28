@@ -10,11 +10,11 @@ import Carousel from '@/components/NewLook/Carousel';
 import Gallery from '@/components/NewLook/Gallery';
 
 const Home: React.FC = () => {
-  useEffect(() => {
-    const audio = new Audio('/so-high-school-intro.mp3');
-    audio.volume = 0.5;
-    audio.play();
-  }, []);
+  // useEffect(() => {
+  //   const audio = new Audio('/so-high-school-intro.mp3');
+  //   audio.volume = 0.5;
+  //   audio.play();
+  // }, []);
 
   return (
     <div className="flex flex-col min-h-screen bg-white font-slack font-bold items-center p-5 sm:p-10">
@@ -32,10 +32,10 @@ const Home: React.FC = () => {
 
         <div className='flex flex-col items-center pt-10'>
           <ul className='flex justify-center space-x-4 font-sans font-bold text-sm uppercase'>
-            <li className='text-[#2a93b3]'><Link href={"/about"} >About</Link></li>
+            <li className='text-[#2a93b3]'><Link href={"/swiftpost"} >Swift Post</Link></li>
             <li className='text-[#289c6c]'><Link href={"/"} >Home</Link></li>
-            <li className='text-[#ECB22E]'><Link href={"/executives"} >Executives</Link></li>
-            <li className='text-[#c52f2f]'><Link href={"/events"} >Events</Link></li>
+            <li className='text-[#ECB22E]'><Link href={"/info/executives"} >Executives</Link></li>
+            <li className='text-[#c52f2f]'><Link href={"/info/events"} >Events</Link></li>
             {/* <li>Gallery</li> */}
           </ul>
         </div>
