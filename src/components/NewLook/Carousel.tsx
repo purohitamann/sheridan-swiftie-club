@@ -6,16 +6,16 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const posts = [
   {
-    title: "Annual Election – March 03th!",
+    title: "Annual Election – March 05th!",
     description: "Vote for your favorite executives and make your voice heard!",
-    date: "March 3, 2024",
-    image: "https://via.placeholder.com/600x300?text=Karaoke+Night",
+    date: "Voting line open till March 05",
+    image: "new-look/election.png",
   },
   {
     title: "More Events Coming Soon!",
     description: "Stay tuned for more exciting events and activities!",
     date: "tentative",
-    image: "https://via.placeholder.com/600x300?text=Dance+Party",
+    image: "new-look/error.png",
   },
   // {
   //   title: "🎶 Album Listening Session – Join Us!",

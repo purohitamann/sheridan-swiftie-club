@@ -5,21 +5,21 @@ import { useState, useEffect } from "react";
 
 // Sample event images - in a real app, these would come from your data source
 const topRowImages = [
-  "https://via.placeholder.com/400x300?text=Event+1",
-  "https://via.placeholder.com/400x300?text=Event+2",
-  "https://via.placeholder.com/400x300?text=Event+3",
-  "https://via.placeholder.com/400x300?text=Event+4",
-  "https://via.placeholder.com/400x300?text=Event+5",
-  "https://via.placeholder.com/400x300?text=Event+6",
+  "new-look/mem.jpeg",
+  "new-look/mem1.jpeg",
+  "new-look/mem2.jpeg",
+  "new-look/mem3.jpeg",
+  "new-look/mem4.jpeg",
+  "new-look/mem5.jpeg",
 ];
 
 const bottomRowImages = [
-  "https://via.placeholder.com/400x300?text=Memory+1",
-  "https://via.placeholder.com/400x300?text=Memory+2",
-  "https://via.placeholder.com/400x300?text=Memory+3",
-  "https://via.placeholder.com/400x300?text=Memory+4",
-  "https://via.placeholder.com/400x300?text=Memory+5",
-  "https://via.placeholder.com/400x300?text=Memory+6",
+  "new-look/mem6.jpeg",
+  "new-look/mem7.jpeg",
+  "new-look/mem8.jpeg",
+  "new-look/mem9.jpeg",
+  "new-look/mem10.jpeg",
+  "new-look/mem11.jpeg",
 ];
 
 const Gallery = () => {
@@ -76,7 +76,7 @@ const Gallery = () => {
                 className="w-64 h-40 sm:w-72 sm:h-48 object-cover rounded-lg shadow-lg border-2 border-white"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <p className="text-white p-2 text-sm font-sans">Event {(index % topRowImages.length) + 1}</p>
+                {/* <p className="text-white p-2 text-sm font-sans">Event {(index % topRowImages.length) + 1}</p> */}
               </div>
             </motion.div>
           ))}

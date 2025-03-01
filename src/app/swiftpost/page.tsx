@@ -1,7 +1,7 @@
 "use client"; // Ensure this is included for client-side execution
 
 import Link from 'next/link'; // For navigation to individual posts
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+
 
 const posts = [
   {
@@ -28,6 +28,7 @@ const posts = [
 ];
 
 const SwiftPostPage = () => {
+
   return (
     <div className="min-h-screen pt-40 bg-white text-black p-6">
       <div className="max-w-6xl mx-auto">
