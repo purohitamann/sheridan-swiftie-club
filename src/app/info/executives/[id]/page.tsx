@@ -1,40 +1,65 @@
-"use client"; // Make sure this is included if you're using the App Directory
+"use client"; 
 
-import { useParams } from "next/navigation"; // Import useParams from next/navigation
-
-const executiveDetails = {
-  "taylor-swift": { name: "Taylor Swift", position: "President", program: "Music Business", description: "A global icon in music and leadership." },
-  "jack-antonoff": { name: "Jack Antonoff", position: "Treasurer", program: "Music Production", description: "The mastermind behind many chart-topping hits." },
-  "phoebe-bridgers": { name: "Phoebe Bridgers", position: "Secretary", program: "Songwriting", description: "A poet and lyricist with a love for indie music." },
-};
+import { useParams, useRouter } from "next/navigation";
+import executivesData from '@/data/executives.json';
 
 const ExecutiveProfile = () => {
-  const { id } = useParams(); // Get the dynamic route parameter
-
-  // If id doesn't exist, show loading state or error
+  const { id } = useParams(); 
+  const router = useRouter();
+  
+  
   if (!id) {
-    return <p>Loading...</p>;
+    return (
+      <div className="min-h-screen pt-40 bg-white flex flex-col items-center justify-center p-6">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold font-sans mb-4">Profile Not Found</h1>
+          <p className="mb-8 font-slack text-xl">Sorry, we couldn't find the executive profile you're looking for.</p>
+          <button
+            onClick={() => router.push('/info/executives')}
+            className="px-6 py-3 bg-[#2EB67D] text-white rounded-lg shadow-md hover:bg-[#218a5e] font-slack text-lg"
+          >
+            Back to Team
+          </button>
+        </div>
+      </div>
+    );
   }
 
-  const executive = executiveDetails[id as keyof typeof executiveDetails];
-
-  // If the executive doesn't exist, show an error or fallback message
-  if (!executive) {
-    return <p>Executive not found.</p>;
-  }
+  const executive = executivesData.find(exec => exec.id === id);
 
   return (
-    <div className="flex flex-col items-center p-10 text-gray-900">
-      <h1 className="text-4xl font-bold">{executive.name}</h1>
-      <h2 className="text-xl text-gray-600">{executive.position}</h2>
-      <p className="mt-4 text-lg font-semibold">{executive.program}</p>
-      <p className="mt-2 max-w-lg text-center">{executive.description}</p>
-      <button
-        onClick={() => window.history.back()}
-        className="mt-6 px-4 py-2 bg-[#2EB67D] text-white rounded-lg shadow-md hover:bg-[#218a5e]"
-      >
-        Back to Roster
-      </button>
+    <div className="min-h-screen pt-40 bg-white p-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white rounded-lg overflow-hidden shadow-md">
+          <div className="md:flex">
+            <div className="md:w-1/3">
+              <img 
+                src={executive?.profilePic} 
+                alt={executive?.fullName} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="md:w-2/3 p-8">
+              <h1 className="text-3xl font-bold font-sans text-gray-800 mb-2">{executive?.fullName}</h1>
+              <p className="text-xl font-slack text-[#2EB67D] mb-2">{executive?.role}</p>
+              <p className="text-sm font-slack text-gray-600 mb-6">{executive?.pronouns}</p>
+              
+              <div className="border-t border-gray-200 pt-6">
+                <p className="text-lg font-slack text-gray-700 leading-relaxed">{executive?.description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => router.push('/info/executives')}
+            className="px-6 py-3 bg-[#2EB67D] text-white rounded-lg shadow-md hover:bg-[#218a5e] font-slack text-lg"
+          >
+            Back to Team
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

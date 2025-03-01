@@ -128,7 +128,44 @@ html {
 }
 
 .polaroid-caption {
-  font-family: 'Caveat', cursive;
+  font-family: 'Lato', sans-serif;
   margin-top: 0.5rem;
   text-align: center;
+}
+
+/* Newspaper styles */
+.newspaper-heading {
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5rem;
+}
+
+.newspaper-date {
+  font-family: 'Lato', sans-serif;
+  font-style: italic;
+  color: #666;
+}
+
+.newspaper-content {
+  column-count: 1;
+  column-gap: 2rem;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .newspaper-content {
+    column-count: 2;
+  }
+}
+
+.newspaper-dropcap::first-letter {
+  font-family: 'Inter', sans-serif;
+  float: left;
+  font-size: 4rem;
+  line-height: 0.8;
+  padding-right: 0.1em;
+  padding-top: 0.1em;
 }

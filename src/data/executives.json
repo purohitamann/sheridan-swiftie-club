@@ -1,5 +1,6 @@
 [
   {
+    "id": "aman-purohit",
     "fullName": "Aman Hiran Purohit",
     "profilePic": "/executives/AP.png",
     "role": "President",
@@ -7,6 +8,7 @@
     "description": "I'm Aman, the architect behind the Sheridan Swiftie Club and proud to serve as its President. As we celebrate the club's 1st anniversary, I'm thrilled about the exciting events and meetups we have planned this fall. It's been an amazing journey, and I can't wait to see how we continue to grow this vibrant community!"
   },
   {
+    "id": "vidhi-kalal",
     "fullName": "Vidhi Kalal",
     "profilePic": "/executives/VK.png",
     "role": "Vice President - Events",
@@ -14,6 +16,7 @@
     "description": "Hi, I'm Vidhi, your VP of Events! Organizing events and boosting engagement is my passion. As we head into this new semester, I'm excited to host memorable events and foster even more participation within our community. Let's make this year full of amazing Swiftie moments!"
   },
   {
+    "id": "cris-cabrera",
     "fullName": "Cris Cabrera",
     "profilePic": "/executives/CC.png",
     "role": "Vice President - Engagement",
@@ -21,13 +24,15 @@
     "description": "Hey there! I'm Cris, your VP of Engagement, and I'm super excited to connect with fellow Swifties this year. I love discussing music with no judgment, especially Taylor Swift's! I can't wait to meet new faces and create awesome memories with everyone. Let's make this year unforgettable!"
   },
   {
-    "fullName": "Abira Esther Demello",
-    "profilePic": "/executives/AD.png",
-    "role": "Outreach & Engagement Coordinator",
+    "id": "riya-vohra",
+    "fullName": "Riya Vohra",
+    "profilePic": "/executives/RV.png",
+    "role": "Events Coordinator",
     "pronouns": "She/Her",
-    "description": "Hi, I'm Abira, a third-year Computer Science student and the Outreach & Engagement Coordinator at SSC. Music has always been a major influence in my life, and Taylor Swift's work is no exception. I'm excited to help organize events and contribute to growing this amazing Swiftie community!"
+    "description": "Hi, I'm Riya"
   },
   {
+    "id": "siddharth-lamba",
     "fullName": "Siddharth Lamba",
     "profilePic": "/executives/SL.png",
     "role": "Events Lead",
@@ -35,6 +40,7 @@
     "description": "Hello, I'm Siddharth, the Events Lead at SSC. I'm looking forward to getting to know all the new members and collaborating with everyone to create some unforgettable events this year. Let's make this fall semester a great one for all Swifties!"
   },
   {
+    "id": "benafsha-kavarana",
     "fullName": "Benafsha Kavarana",
     "profilePic": "/executives/BK.png",
     "role": "Outreach & Engagement Coordinator",
@@ -42,13 +48,16 @@
     "description": "Hi, I'm Benafsha! Currently enrolled in the Public Relations program working towards becoming a PR pro who loves connecting with people and creating positive vibes. When I'm not studying, you'll probably find me with a book, checking out new restaurants, or planning my next trip. Oh, and I'm a huge Taylor Swift fan—I start my day with songs from the Reputation album and end the day with Midnights! I feel like I'm definitely between the Reputation and Midnights eras. Reputation speaks to me because it's all about reclaiming your power and owning who you are. On the other hand, Midnights feels dreamy, representing those late-night thoughts and reflections about growth, love, and uncertainty. Both eras together just feel like the perfect mix of strength and self-discovery right now! I'm looking forward to meeting fellow Swifties and bonding over our favorite Taylor Swift songs this fall term! I'm excited for the themed events or album listening parties we might have and just sharing all Eras love. Plus, it'll be great to make new connections with people who share the same passion! What about you?"
   },
   {
-    "fullName": "Prabal Manchanda",
-    "profilePic": "/executives/PM.png",
-    "role": "Operations Manager",
+    "id": "harry-allen",
+    "fullName": "Harry Allen",
+    "profilePic": "/executives/HA.jpeg",
+   
+    "role": "Social Media Coordinator",
     "pronouns": "He/Him",
-    "description": "Hey, Swifties! I'm Prabal, your Operations Manager. This fall, I'm excited about our upcoming events and the chance to welcome new members. We've got some fun activities planned to explore Taylor's music and her journey as an artist. Can't wait to see you all at the events!"
+    "description": "Hi, I’m Harry, a Computer Science undergrad by day and a proud Swiftie 24/7. My favorite Taylor Swift song? “Willow” – it’s pure magic, just like her! Honestly, she’s fire, and I’m here for all of it yes, I might’ve cried during her concert livestream (ps.don’t judge)."
   },
   {
+    "id": "aditya-sharma",
     "fullName": "Aditya Sharma",
     "profilePic": "/executives/AS.png",
     "role": "Social Media Manager",
@@ -56,6 +65,7 @@
     "description": "Hi, I'm Aditya, your Social Media Manager. Designing graphics and animations is my passion, and I'm excited to create engaging content for the club. Let's make sure SSC's presence shines online and keeps everyone connected and excited for what's next!"
   },
   {
+    "id": "tanya-arora",
     "fullName": "Tanya Arora",
     "profilePic": "/executives/TA.png",
     "role": "Advisor",

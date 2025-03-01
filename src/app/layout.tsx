@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import { Cinzel } from 'next/font/google';
 import './globals.css';
 import SmoothScroll from '@/components/NewLook/SmoothScroll';
+import Header from '@/components/NewLook/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 const cinzel = Cinzel({ subsets: ['latin'] });
@@ -30,14 +31,12 @@ export default function RootLayout({
 </head>
       <body className='font-inter'>
         <div>
-          <SmoothScroll>{children}</SmoothScroll>
-
-</div>
-
+          <SmoothScroll>
+            <Header />
+            {children}
+          </SmoothScroll>
+        </div>
       </body>
-
-
     </html >
-
   );
 }
