@@ -19,7 +19,7 @@ const PostDetailPage = () => {
   const post = postDetails[id as keyof typeof postDetails];
 
   // Format content with proper line breaks
-  const formatContent = (content) => {
+  const formatContent = (content: string) => {
     return content.split('\n').map((line, index) => (
       <p key={index} className={`mb-4 ${line.trim().startsWith('📅') || line.trim().startsWith('⏳') ? 'font-medium' : ''}`}>
         {line}
