@@ -10,14 +10,9 @@ const config: Config = {
   theme: {
   	extend: {
 		fontFamily: {
-			sans: ['Inter', 'sans-serif'], // For Notion's style
-			slack: ['Lato', 'sans-serif'], // For Slack's style
-			futura: ['Futura', 'sans-serif'], // For Futura's style
-			serif: ['Cinzel', 'serif'], // For Cinzel's style
-			mono: ['Menlo', 'monospace'], // For Monospace's style
-			heading: ['Montserrat', 'sans-serif'], // For Heading's style
-			handwriting: ['Caveat', 'cursive'], // For handwritten style
-			marker: ['Permanent Marker', 'cursive'], // For marker/sharpie style
+			sans: ['Inter', 'sans-serif'], // Main body font
+			heading: ['Poppins', 'sans-serif'], // Headers and titles
+			mono: ['Menlo', 'Monaco', 'monospace'], // Code blocks
 		  },
 		keyframes: {
 			jitter: {
@@ -71,6 +66,18 @@ const config: Config = {
   				DEFAULT: 'hsl(var(--primary))',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
+			orange: {
+				50: '#fff7ed',
+				100: '#ffedd5',
+				200: '#fed7aa',
+				300: '#fdba74',
+				400: '#fb923c',
+				500: '#f97316',
+				600: '#ea580c',
+				700: '#c2410c',
+				800: '#9a3412',
+				900: '#7c2d12'
+			},
   			secondary: {
   				DEFAULT: 'hsl(var(--secondary))',
   				foreground: 'hsl(var(--secondary-foreground))'

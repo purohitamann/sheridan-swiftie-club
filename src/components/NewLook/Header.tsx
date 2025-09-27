@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md  py-2" : "bg-white/80 backdrop-blur-md py-8"
+        isScrolled ? "bg-black shadow-md shadow-orange-500/20 py-2" : "bg-black/90 backdrop-blur-md py-8"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
@@ -38,25 +38,28 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <ul className="flex space-x-6 font-sans font-bold text-sm uppercase">
-            <li className="text-[#2a93b3]">
+          <ul className="flex space-x-6 font-heading font-medium text-sm uppercase">
+            <li className="text-orange-400 hover:text-orange-300 transition-colors">
               <Link href="/swiftpost">Swift Post</Link>
             </li>
-            <li className="text-[#289c6c]">
+            <li className="text-orange-500 hover:text-orange-400 transition-colors">
               <Link href="/">Home</Link>
             </li>
-            <li className="text-[#ECB22E]">
+            <li className="text-orange-400 hover:text-orange-300 transition-colors">
               <Link href="/info/executives">Executives</Link>
             </li>
-            <li className="text-[#c52f2f]">
+            <li className="text-orange-400 hover:text-orange-300 transition-colors">
               <Link href="/info/events">Events</Link>
+            </li>
+            <li className="text-orange-400 hover:text-orange-300 transition-colors">
+              <Link href="/raffle">Giveaway</Link>
             </li>
           </ul>
         </nav>
 
         {/* Mobile Menu Button - Ensure it's visible on mobile */}
         <button
-          className="block md:hidden text-gray-700 focus:outline-none p-2 rounded"
+          className="block md:hidden text-orange-500 focus:outline-none p-2 rounded"
           onClick={() => setIsMobileMenuOpen(true)}
           aria-label="Open menu"
         >
@@ -76,7 +79,7 @@ const Header = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed min-h-screen inset-0 bg-white  flex flex-col items-center justify-center z-50"
+            className="fixed min-h-screen inset-0 bg-black flex flex-col items-center justify-center z-50"
             initial={{ opacity: 0, x: "100%" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
@@ -84,7 +87,7 @@ const Header = () => {
           >
             {/* Close Button */}
             <button
-              className="absolute top-5 right-5  text-3xl"
+              className="absolute top-5 right-5 text-orange-500 text-3xl"
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label="Close menu"
             >
@@ -92,25 +95,30 @@ const Header = () => {
             </button>
 
             {/* Mobile Navigation Links */}
-            <ul className="flex flex-col items-center  space-y-8 text-2xl font-bold font-slack uppercase ">
-              <li className="text-[#2a93b3]">
+            <ul className="flex flex-col items-center space-y-8 text-2xl font-bold font-heading uppercase">
+              <li className="text-orange-400 hover:text-orange-300 transition-colors">
                 <Link href="/swiftpost" onClick={() => setIsMobileMenuOpen(false)}>
                   Swift Post
                 </Link>
               </li>
-              <li className="text-[#289c6c]">
+              <li className="text-orange-500 hover:text-orange-400 transition-colors">
                 <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
                   Home
                 </Link>
               </li>
-              <li className="text-[#ECB22E]">
+              <li className="text-orange-400 hover:text-orange-300 transition-colors">
                 <Link href="/info/executives" onClick={() => setIsMobileMenuOpen(false)}>
                   Executives
                 </Link>
               </li>
-              <li className="text-[#c52f2f]">
+              <li className="text-orange-400 hover:text-orange-300 transition-colors">
                 <Link href="/info/events" onClick={() => setIsMobileMenuOpen(false)}>
                   Events
+                </Link>
+              </li>
+              <li className="text-orange-400 hover:text-orange-300 transition-colors">
+                <Link href="/raffle" onClick={() => setIsMobileMenuOpen(false)}>
+                  Giveaway
                 </Link>
               </li>
             </ul>

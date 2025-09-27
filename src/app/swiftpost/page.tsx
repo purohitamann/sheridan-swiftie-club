@@ -1,5 +1,6 @@
 "use client"; // Ensure this is included for client-side execution
 
+import Footer from '@/components/NewLook/Footer';
 import Link from 'next/link'; // For navigation to individual posts
 
 
@@ -11,13 +12,13 @@ const posts = [
     summary: 'Check out our February updates, including exciting club events and a message from our president.',
     image: '/new-look/election.png',
   },
-  // {
-  //   id: 'post-2',
-  //   title: 'March Swiftie Hangout - Save the Date!',
-  //   date: 'March 10, 2025',
-  //   summary: 'Join us for our March Swiftie hangout event. Read all the details here.',
-  //   image: 'https://via.placeholder.com/500x300',
-  // },
+   {
+    id: 'clubs-fair-2025',
+    title: 'Clubs Fair, Fall 2025',
+    date: 'Oct 03, 2025',
+    image: '/showgirl/loasg.webp',
+    summary: "Hey Bruins!\n\nJoin us at the annual Clubs Fair to discover all the exciting clubs and activities Sheridan has to offer!\n\n Date: October 3, 2025\nDon't miss out on the fun—mark your calendars!\n\nBest,\nThe Executive Team"
+  },
   // {
   //   id: 'post-3',
   //   title: 'Swiftie Fundraiser Announcement',
@@ -50,7 +51,7 @@ const SwiftPostPage = () => {
               </div>
               <div className="p-4">
                 <h3 className="text-xl font-bold font-sans">{post.title}</h3>
-                <p className="mt-2 text-sm font-slack">{post.summary}</p>
+                <p className="mt-2 text-sm font-slack text-yellow-100">{post.summary}</p>
               </div>
               <div className="p-4 flex justify-center">
                 <Link href={`/swiftpost/${post.id}`} passHref>
@@ -63,6 +64,7 @@ const SwiftPostPage = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

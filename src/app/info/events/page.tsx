@@ -3,6 +3,7 @@
 import Link from 'next/link'; // Import Link for navigation
 import { useState } from 'react';
 import eventsData from '@/data/events.json';
+import Footer from '@/components/NewLook/Footer';
 
 const EventsPage = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -174,6 +175,7 @@ const EventsPage = () => {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

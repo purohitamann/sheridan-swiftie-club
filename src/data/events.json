@@ -32,6 +32,17 @@
       "location": "A145, HMC Campus",
       "link": "/swiftville/ready-for-it",
       "type": "This is a Free Event"
+    },
+    {
+      "key": 4,
+      "title": "Clubs Fair, Fall 2024",
+      "description": "Join us at the Clubs Fair to discover the vibrant Sheridan Swiftie Club community! Whether you're a long-time fan or new to Taylor Swift's music, this is the perfect opportunity to connect with fellow Swifties, learn about our upcoming events, and find out how you can get involved. Don't miss out on the fun and excitement—come say hi and let's make this semester unforgettable together!",
+      "image": "/showgirl/loasg.webp",
+      "date": "10/03/2025",
+      "time": "11:00-13:00",
+      "location": "the Marquee, SSU Atrium",
+      "link": "/",
+      "type": "This is a Free Event"
     }
   ]
 }

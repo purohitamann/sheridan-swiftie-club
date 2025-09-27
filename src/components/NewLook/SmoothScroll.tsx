@@ -22,7 +22,7 @@ const SmoothScroll = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       ref={scrollRef}
-      className="h-screen overflow-y-scroll overflow-x-hidden relative bg-white"
+      className="h-screen overflow-y-scroll overflow-x-hidden relative bg-black"
     >
    
       <motion.div style={{ y }} className="flex flex-col space-y-10 p-10">

@@ -1,9 +1,8 @@
 
 import { initializeApp } from 'firebase/app';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
-// import {  collection, getDocs, updateDoc } from 'firebase/firestore';
-import { getStorage } from 'firebase/storage';
+import { getFirestore, doc, getDoc, setDoc, collection, addDoc, arrayUnion, updateDoc } from 'firebase/firestore';
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 const provider = new GoogleAuthProvider();
@@ -159,6 +158,111 @@ export const initializeUserStructure = async (userId: string) => {
     console.log('User doc ref:', userDocRef);
   } catch (error) {
     console.error('Error initializing user structure:', error);
+    throw error;
+  }
+};
+
+// Upload image to Firebase Storage
+export const uploadImageToStorage = async (file: File, path: string): Promise<string> => {
+  try {
+    // Validate file size (5MB limit)
+    const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+    if (file.size > maxSize) {
+      throw new Error('File size must be less than 5MB');
+    }
+
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      throw new Error('File must be an image');
+    }
+
+    const storageRef = ref(storage, path);
+    const snapshot = await uploadBytes(storageRef, file);
+    const downloadURL = await getDownloadURL(snapshot.ref);
+    return downloadURL;
+  } catch (error) {
+    console.error('Error uploading image:', error);
+    throw error;
+  }
+};
+
+// Save giveaway entry to Firestore
+export const saveGiveawayEntry = async (entryData: {
+  name: string;
+  email: string;
+  imageUrl: string;
+  timestamp: Date;
+}) => {
+  try {
+    const giveawayDocRef = doc(firestore, 'fall-2025', 'giveaway');
+    
+    // First, get the document to see if it exists
+    const docSnapshot = await getDoc(giveawayDocRef);
+    
+    if (docSnapshot.exists()) {
+      // Document exists, update it by adding to the entries array
+      await updateDoc(giveawayDocRef, {
+        entries: arrayUnion(entryData),
+        lastUpdated: new Date()
+      });
+    } else {
+      // Document doesn't exist, create it with the first entry
+      await setDoc(giveawayDocRef, {
+        entries: [entryData],
+        createdAt: new Date(),
+        lastUpdated: new Date()
+      });
+    }
+    
+    console.log('Giveaway entry saved successfully');
+  } catch (error) {
+    console.error('Error saving giveaway entry:', error);
+    throw error;
+  }
+};
+
+// Upload selfie and save giveaway entry
+export const submitGiveawayEntry = async (
+  name: string, 
+  email: string, 
+  selfieFile: File
+): Promise<void> => {
+  try {
+    // Validate inputs
+    if (!name.trim()) {
+      throw new Error('Name is required');
+    }
+    if (!email.trim()) {
+      throw new Error('Email is required');
+    }
+    if (!selfieFile) {
+      throw new Error('Selfie image is required');
+    }
+
+    // Create a unique filename for the selfie
+    const timestamp = Date.now();
+    const filename = `${timestamp}_${selfieFile.name.replace(/[^a-zA-Z0-9.]/g, '_')}`;
+    const imagePath = `giveaway/fall-2025/selfies/${filename}`;
+    
+    // Upload the image to Firebase Storage
+    console.log('Uploading image to Firebase Storage...');
+    const imageUrl = await uploadImageToStorage(selfieFile, imagePath);
+    console.log('Image uploaded successfully:', imageUrl);
+    
+    // Prepare the entry data
+    const entryData = {
+      name: name.trim(),
+      email: email.trim().toLowerCase(),
+      imageUrl,
+      timestamp: new Date()
+    };
+    
+    // Save the entry to Firestore
+    console.log('Saving entry to Firestore...');
+    await saveGiveawayEntry(entryData);
+    console.log('Entry saved successfully');
+  } catch (error) {
+    console.error('Error submitting giveaway entry:', error);
     throw error;
   }
 };

@@ -1,14 +1,19 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { Cinzel } from 'next/font/google';
+import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import SmoothScroll from '@/components/NewLook/SmoothScroll';
 import Header from '@/components/NewLook/Header';
+import GlitterBackground from '@/components/NewLook/GlitterBackground';
+
 
 const inter = Inter({ subsets: ['latin'] });
-const cinzel = Cinzel({ subsets: ['latin'] });
+const poppins = Poppins({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700']
+});
 
 import React from 'react';
+import Footer from '@/components/NewLook/Footer';
 
 export const metadata: Metadata = {
   title: 'Sheridan Swiftie Club',
@@ -23,19 +28,20 @@ export default function RootLayout({
 
   return (
 
-    <html lang="en" style={{ fontFamily: 'Cinzel' }} className={`${cinzel.className} overflow-y-hidden`}>
+    <html lang="en" className={`${inter.className} overflow-y-hidden`}>
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /> 
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+
 </head>
-      <body className='font-inter'>
-        <div>
+      <body className='font-sans'>
+       
+        <div className="relative z-10 bg-black">
           <SmoothScroll>
             <Header />
+             <GlitterBackground />
             {children}
           </SmoothScroll>
         </div>
+    
       </body>
     </html >
   );

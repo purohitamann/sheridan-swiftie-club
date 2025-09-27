@@ -6,17 +6,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const posts = [
   {
-    title: "Annual Election – March 05th!",
-    description: "Vote for your favorite executives and make your voice heard!",
-    date: "Voting line open till March 05",
-    image: "new-look/election.png",
+    title: "Clubs Fair, Fall 2025",
+    description: "Join us at the annual Clubs Fair to discover all the exciting clubs and activities Sheridan has to offer!",
+    date: "Oct 03, 2025",
+    image: "/showgirl/loasg.webp",
   },
-  {
-    title: "More Events Coming Soon!",
-    description: "Stay tuned for more exciting events and activities!",
-    date: "tentative",
-    image: "new-look/error.png",
-  },
+  // {
+  //   title: "More Events Coming Soon!",
+  //   description: "Stay tuned for more exciting events and activities!",
+  //   date: "tentative",
+  //   image: "new-look/error.png",
+  // },
   // {
   //   title: "🎶 Album Listening Session – Join Us!",
   //   description: "Experience Taylor's iconic albums with fellow fans.",
@@ -51,10 +51,7 @@ const Carousel = () => {
             className="p-4 text-center"
           >
             {/* Polaroid Frame */}
-            <div className="bg-white p-3 pt-3 pb-14 shadow-xl rounded-sm transform rotate-0 mx-auto max-w-sm relative" 
-                 style={{ 
-                   boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-                 }}>
+            <div className="bg-black border-2 border-orange-500 p-3 pt-3 pb-14 shadow-xl shadow-orange-500/20 rounded-sm transform rotate-0 mx-auto max-w-sm relative">
               {/* Image */}
               <div className="mb-12 bg-gray-100">
                 <img 
@@ -66,15 +63,15 @@ const Carousel = () => {
               
               {/* Content - Styled like a handwritten note */}
               <div className="px-4 text-center">
-                <h3 className="text-lg sm:text-xl font-bold  text-gray-800 font-sans" 
+                <h3 className="text-lg sm:text-xl font-bold text-orange-500 font-sans" 
                     >
                   {posts[current].title}
                 </h3>
-                <p className="text-xs sm:text-sm mt-1 text-gray-700 font-mono" 
+                <p className="text-xs sm:text-sm mt-1 text-orange-300 font-mono" 
                   >
                   {posts[current].description}
                 </p>
-                <p className="text-xs mt-2 text-gray-500 italic">
+                <p className="text-xs mt-2 text-orange-400 italic">
                   {posts[current].date}
                 </p>
               </div>
@@ -87,12 +84,12 @@ const Carousel = () => {
       </div>
 
       {/* Navigation Arrows */}
-      <button onClick={prevSlide} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/70 p-2 rounded-full shadow-md hover:bg-white transition">
-        <ChevronLeft className="text-gray-800" size={24} />
+      <button onClick={prevSlide} className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-orange-500/70 p-2 rounded-full shadow-md hover:bg-orange-500 transition">
+        <ChevronLeft className="text-black" size={24} />
       </button>
 
-      <button onClick={nextSlide} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/70 p-2 rounded-full shadow-md hover:bg-white transition">
-        <ChevronRight className="text-gray-800" size={24} />
+      <button onClick={nextSlide} className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-orange-500/70 p-2 rounded-full shadow-md hover:bg-orange-500 transition">
+        <ChevronRight className="text-black" size={24} />
       </button>
 
       {/* Dots Indicator */}
@@ -102,7 +99,7 @@ const Carousel = () => {
             key={index}
             onClick={() => setCurrent(index)}
             className={`w-3 h-3 rounded-full cursor-pointer transition-all ${
-              index === current ? "bg-gray-800" : "bg-gray-300"
+              index === current ? "bg-orange-500" : "bg-orange-300"
             }`}
           />
         ))}

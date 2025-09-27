@@ -3,18 +3,18 @@ import { motion } from "framer-motion";
 const FanClubLetter = () => {
   return (
     <motion.div
-      className="flex flex-col items-center p-14 sm:p-6 md:p-8 w-full sm:max-w-3xl max-w-lg bg-white border-2 border-gray-300 shadow-lg rounded-lg text-center mx-auto"
+      className="flex flex-col items-center p-14 sm:p-6 md:p-8 w-full sm:max-w-3xl max-w-lg bg-black border-2 border-orange-500 shadow-lg shadow-orange-500/20 rounded-lg text-center mx-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
       {/* Letter Header */}
-      <h1 className="text-lg sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 font-futura uppercase">
+      <h1 className="text-lg sm:text-2xl md:text-3xl font-bold text-orange-500 mb-4 font-heading uppercase">
         Why a Fan Club?
       </h1>
 
       {/* Letter Body */}
-      <div className="text-gray-700 text-xs sm:text-sm md:text-base font-light font-sans text-justify px-4 sm:px-6">
+      <div className="text-orange-200 text-xs sm:text-sm md:text-base font-light font-sans text-justify px-4 sm:px-6">
         <p className="mb-4">
           "Being a fan of something is such a blessing, because being a fan of anything gives your life a lot more purpose than you'll ever know. In a world of so much disagreeing, being a fan lets you be a part of something like-minded. You get to feel, together—what a rare thing to feel these days.
         </p>
@@ -32,7 +32,7 @@ const FanClubLetter = () => {
         </p>
 
         {/* Author Signature */}
-        <p className="mt-4 text-right font-medium text-gray-600 italic">
+        <p className="mt-4 text-right font-medium text-orange-400 italic">
           - Josie Balka, Writer
         </p>
       </div>

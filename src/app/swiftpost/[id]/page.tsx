@@ -3,6 +3,12 @@
 import { useParams, useRouter } from 'next/navigation'; // Import useParams to get dynamic route param
 
 const postDetails = {
+  'clubs-fair-2025': {
+    title: 'Clubs Fair, Fall 2025',
+    date: 'Oct 03, 2025',
+    image: '/showgirl/loasg.webp',
+    "content": "Hey Swifties! 🎶✨\n\nJoin us at the annual Clubs Fair to discover all the exciting clubs and activities Sheridan has to offer!\n\n📅 Date: October 3, 2025\n⏳ Don't miss out on the fun—mark your calendars!\n\nBest,\nThe Executive Team"
+  },
   'feb-newsletter-2025': {
     title: 'February Newsletter - Swiftie Update',
     date: 'February 28, 2025',

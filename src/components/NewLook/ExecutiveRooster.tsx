@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Footer from "./Footer";
 
 const executives = [
   { name: "Taylor Swift", position: "President", img: "https://via.placeholder.com/150" },
@@ -51,7 +52,7 @@ const ExecutiveRoster = () => {
         ))}
       </div>
 
-      {/* Countdown Timer */}
+      {/* Countdown Timer
       <div className="mt-10 flex flex-col items-center">
         <h3 className="text-xl font-bold uppercase tracking-wide">Next Election Countdown</h3>
         <div className="flex space-x-4 mt-3 text-lg font-semibold">
@@ -60,7 +61,8 @@ const ExecutiveRoster = () => {
           <div className="bg-white text-gray-900 px-4 py-2 rounded-md shadow-md">{timeLeft.minutes}m</div>
           <div className="bg-white text-gray-900 px-4 py-2 rounded-md shadow-md">{timeLeft.seconds}s</div>
         </div>
-      </div>
+      </div> */}
+
     </div>
   );
 };

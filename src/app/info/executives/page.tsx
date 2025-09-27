@@ -4,6 +4,7 @@ import Link from 'next/link'; // Import Link for navigation
 import { useState } from 'react';
 import executivesData from '@/data/executives.json';
 import Countdown from '@/components/NewLook/Countdown';
+import Footer from '@/components/NewLook/Footer';
 
 const ExecutiveRoster = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
@@ -14,14 +15,14 @@ const ExecutiveRoster = () => {
         <h1 className="text-4xl md:text-5xl font-sans text-center font-bold mb-4">Our Team</h1>
         <p className="text-center text-lg mb-12 font-slack text-gray-600">Meet the passionate individuals behind Sheridan Swiftie Club</p>
         <div className="flex flex-col items-center ">
-      <h1 className="text-lg font-bold font-sans mb-6 bg-[#c52f2f] text-white p-2 rounded uppercase">Election is LIVE! Voting is happening now!</h1>
+      {/* <h1 className="text-lg font-bold font-sans mb-6 bg-[#c52f2f] text-white p-2 rounded uppercase">Election is LIVE! Voting is happening now!</h1>
       <p className='text-sm font-mono pb-5'>voting lines are open till 13:13 5th March, Wednesday!</p>
       <div className='flex flex-col items-center p-3 pb-6 rounded-lg'>
 
       <Link href="https://sheridancollege.campuslabs.ca/engage/submitter/election/start/19332" > <button className="px-4 py-2 uppercase bg-[#2eb4b6] text-white rounded-lg hover:bg-[#cdc167] transition-colors duration-300 font-slack text-lg">Vote Now</button></Link>
 
-      </div>
-      <Countdown targetDate="2025-03-05T13:13:13" />
+      </div> */}
+      {/* <Countdown targetDate="2025-03-05T13:13:13" /> */}
      
     </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -62,6 +63,7 @@ const ExecutiveRoster = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
