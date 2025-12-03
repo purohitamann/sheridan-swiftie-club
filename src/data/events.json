@@ -35,13 +35,36 @@
     },
     {
       "key": 4,
-      "title": "Clubs Fair, Fall 2024",
-      "description": "Join us at the Clubs Fair to discover the vibrant Sheridan Swiftie Club community! Whether you're a long-time fan or new to Taylor Swift's music, this is the perfect opportunity to connect with fellow Swifties, learn about our upcoming events, and find out how you can get involved. Don't miss out on the fun and excitement—come say hi and let's make this semester unforgettable together!",
+      "title": "Fall Clubs Fair",
+      "description": "Join us at the Fall Clubs Fair to discover the Sheridan Swiftie Club and all the exciting activities we have planned for the semester! Whether you're a longtime Swiftie or new to the fandom, this is the perfect opportunity to connect with fellow fans, learn about our upcoming events, and find out how you can get involved. Don't miss out on the fun – come say hi and let's make this semester unforgettable together!",
       "image": "/showgirl/loasg.webp",
-      "date": "10/03/2025",
-      "time": "11:00-13:00",
-      "location": "the Marquee, SSU Atrium",
+      "date": "11/15/2025",
+      "time": "6:00PM - 9:00PM",
+      "location": "Student Atrium - Sheridan College, Trafalgar Campus",
+      "link": "/swiftville/eras-tour-viewing-party",
+      "type": "This is a Free Event"
+    },
+  
+    {
+      "key": 5,
+      "title": "End of an Era Docu-Series Screening",
+      "description": "Join us for a special screening of Taylor Swift's 'The End of an Era' documentary series. This exclusive event celebrates the conclusion of Taylor's incredible journey and the beginning of new adventures. Come together with fellow Swifties to watch and reflect on the moments that defined an era. Limited seats available - RSVP required!",
+      "image": "/showgirl/e.jpeg",
+      "date": "12/12/2025",
+      "time": "12:00PM - 3:00PM",
+      "location": "C 208 - Sheridan College, Trafalgar Campus",
       "link": "/",
+      "type": "RSVP Required"
+    },
+    {
+       "key": 7,
+      "title": "The Life of a hacker: Karaoke Night @Hackville 2026",
+      "description": "Join us for a night of fun and music at Hackville 2026! Unleash your inner Swiftie and sing your heart out to your favorite Taylor Swift hits. Whether you're a seasoned hacker or just looking to have a good time, this karaoke night is the perfect way to connect with fellow hackers and Swift fans alike. Don't miss out on the chance to showcase your talent and enjoy an unforgettable evening!",
+      "image": "/showgirl/hacker.jpeg",
+      "date": "01/17/2026",
+      "time": "21:00",
+      "location": "HMC campus - Sheridan College",
+      "link": "/showgirl/hacker.jpeg",
       "type": "This is a Free Event"
     }
   ]

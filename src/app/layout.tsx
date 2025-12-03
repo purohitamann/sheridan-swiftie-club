@@ -18,6 +18,9 @@ import Footer from '@/components/NewLook/Footer';
 export const metadata: Metadata = {
   title: 'Sheridan Swiftie Club',
   description: 'The official website for Sheridan Swiftie Club',
+  icons: {
+    icon: './favicon.ico',
+  },
 };
 
 export default function RootLayout({

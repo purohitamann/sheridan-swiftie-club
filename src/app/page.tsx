@@ -1,13 +1,24 @@
 'use client';
 import React, { useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import Mirrorball from '@/components/NewLook/Mirrorball';
 import FanClubLetter from '@/components/NewLook/FanClubLetter';
 import Footer from '@/components/NewLook/Footer';
-import Carousel from '@/components/NewLook/Carousel';
 import Gallery from '@/components/NewLook/Gallery';
 import Header from '@/components/NewLook/Header';
+import EndOfEraEvent from '@/components/NewLook/EndOfEraEvent';
+
+// Dynamically import components that use framer-motion to avoid SSR issues
+const Mirrorball = dynamic(() => import('@/components/NewLook/Mirrorball'), {
+  ssr: false,
+  loading: () => <div className="flex items-center justify-center p-6"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500"></div></div>
+});
+
+const Carousel = dynamic(() => import('@/components/NewLook/Carousel'), {
+  ssr: false,
+  loading: () => <div className="flex items-center justify-center p-6"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-500"></div></div>
+});
 
 
 const Home: React.FC = () => {
@@ -28,11 +39,18 @@ const Home: React.FC = () => {
               2 Years of Sheridan Swiftie Club, <span className="text-orange-200 font-bold">It's a brand new era!</span>
             </p>
             <Link href="/raffle">
-              <button className="bg-black text-orange-500 font-bold py-4 px-8 rounded-lg text-xl border-2 border-black hover:bg-orange-900 hover:text-orange-100 transition-all duration-200 transform hover:scale-105">
-                Enter Movie Ticket Giveaway
+              <button disabled className="bg-gray-500 text-gray-300 font-bold py-4 px-8 rounded-lg text-xl border-2 border-gray-500 cursor-not-allowed opacity-50">
+                Movie Ticket Giveaway (Ended)
               </button>
             </Link>
           </div>
+        </div>
+      </div>
+
+      {/* End of an Era Event Section */}
+      <div className="w-full px-4 py-12 bg-gradient-to-r from-black via-gray-900 to-black">
+        <div className="max-w-6xl mx-auto">
+          <EndOfEraEvent />
         </div>
       </div>
 

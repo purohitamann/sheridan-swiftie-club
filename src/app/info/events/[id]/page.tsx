@@ -2,6 +2,7 @@
 
 import { useParams, useRouter } from "next/navigation";
 import eventsData from '@/data/events.json';
+import EndOfEraEvent from '@/components/NewLook/EndOfEraEvent';
 
 const EventDetailPage = () => {
   const { id } = useParams(); // Get the dynamic ID from the route params
@@ -97,6 +98,13 @@ const EventDetailPage = () => {
               <h2 className="text-xl font-bold font-sans text-gray-800 mb-4">About This Event</h2>
               <p className="text-lg font-slack text-gray-700 leading-relaxed whitespace-pre-line">{event.description}</p>
             </div>
+
+            {/* RSVP Form for End of an Era Event */}
+            {event.key === 5 && (
+              <div className="border-t border-gray-200 pt-6 mt-6">
+                <EndOfEraEvent showRSVP={true} />
+              </div>
+            )}
           </div>
         </div>
         

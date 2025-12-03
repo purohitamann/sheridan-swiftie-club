@@ -266,3 +266,86 @@ export const submitGiveawayEntry = async (
     throw error;
   }
 };
+
+// Save RSVP entry for End of an Era event
+export const saveRSVPEndOfEra = async (rsvpData: {
+  studentId: string;
+  studentEmail: string;
+  eventDescription: string;
+  timestamp: Date;
+}) => {
+  try {
+    const rsvpDocRef = doc(firestore, 'events', 'end-of-era-rsvp');
+    
+    // First, get the document to see if it exists
+    const docSnapshot = await getDoc(rsvpDocRef);
+    
+    if (docSnapshot.exists()) {
+      // Document exists, update it by adding to the rsvps array
+      await updateDoc(rsvpDocRef, {
+        rsvps: arrayUnion(rsvpData),
+        lastUpdated: new Date()
+      });
+    } else {
+      // Document doesn't exist, create it with the first RSVP
+      await setDoc(rsvpDocRef, {
+        rsvps: [rsvpData],
+        eventName: 'End of an Era Docu-Series Screening',
+        eventDate: 'December 15, 2025',
+        createdAt: new Date(),
+        lastUpdated: new Date()
+      });
+    }
+    
+    console.log('RSVP saved successfully');
+  } catch (error) {
+    console.error('Error saving RSVP:', error);
+    throw error;
+  }
+};
+
+// Submit RSVP for End of an Era event
+export const submitRSVPEndOfEra = async (
+  studentId: string,
+  studentEmail: string,
+  eventDescription: string
+): Promise<void> => {
+  try {
+    // Validate inputs
+    if (!studentId.trim()) {
+      throw new Error('Student ID is required');
+    }
+    if (!studentEmail.trim()) {
+      throw new Error('Student email is required');
+    }
+    if (!eventDescription.trim()) {
+      throw new Error('Event description is required');
+    }
+
+    // Validate student ID format
+    if (!/^[0-9]{9}$/.test(studentId)) {
+      throw new Error('Student ID must be 9 digits');
+    }
+
+    // Validate email format
+    if (!/@sheridancollege\.ca$/.test(studentEmail.toLowerCase())) {
+      throw new Error('Must be a valid Sheridan student email (@sheridancollege.ca)');
+    }
+
+    // Prepare the RSVP data
+    const rsvpData = {
+      studentId: studentId.trim(),
+      studentEmail: studentEmail.trim().toLowerCase(),
+      eventDescription: eventDescription.trim(),
+      timestamp: new Date()
+    };
+    
+    // Save the RSVP to Firestore
+    console.log('Saving RSVP to Firestore...');
+    await saveRSVPEndOfEra(rsvpData);
+    console.log('RSVP saved successfully');
+  } catch (error) {
+    console.error('Error submitting RSVP:', error);
+    throw error;
+  }
+};

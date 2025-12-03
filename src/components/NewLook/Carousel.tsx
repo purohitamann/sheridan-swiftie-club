@@ -5,12 +5,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const posts = [
+  // {
+  //   title: "Clubs Fair, Fall 2025",
+  //   description: "Join us at the annual Clubs Fair to discover all the exciting clubs and activities Sheridan has to offer!",
+  //   date: "Oct 03, 2025",
+  //   image: "/showgirl/loasg.webp",
+  // },
   {
-    title: "Clubs Fair, Fall 2025",
-    description: "Join us at the annual Clubs Fair to discover all the exciting clubs and activities Sheridan has to offer!",
-    date: "Oct 03, 2025",
-    image: "/showgirl/loasg.webp",
+    title: "🎬 End of an Era Docu-Series Screening",
+    description: "Join us for a special screening of Taylor Swift's 'The End of an Era' documentary series. Limited seats available!",
+    date: "Dec 12, 2025",
+    image: "/showgirl/e.jpeg",
   },
+  {
+    title: "The Life of a hacker: Karaoke Night @Hackville 2026",
+    description: "Join us for a night of fun and music at Hackville 2026! Unleash your inner Swiftie and sing your heart out to your favorite Taylor Swift hits.",
+    date: "Jan 17, 2026",
+    image: "/showgirl/hacker.jpeg",
+  }
   // {
   //   title: "More Events Coming Soon!",
   //   description: "Stay tuned for more exciting events and activities!",
